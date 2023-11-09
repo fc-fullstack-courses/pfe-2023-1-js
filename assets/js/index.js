@@ -56,12 +56,12 @@ let LONG_VARIABLE_NAME;
 // let true;
 // let var;
 
-alert(age);
+// alert(age);
 
 // присвоєння значення змінній
 age = 50;
 
-alert(age);
+// alert(age);
 
 // let catName;
 // catName = 'Vasyl';
@@ -69,4 +69,26 @@ alert(age);
 // ініціалізація змінної
 let catName = 'Vasyl';
 
-alert(catName);
+// alert(catName);
+
+// оголосіть якусь змінну за допомогою let
+let userName1;
+// подивіться на її значення
+alert(userName1);
+// присвойте цій зміній нове значення
+userName1 = 'Kyrylo';
+// подивіться на її значення ще раз
+alert(userName1);
+
+// повторіть ті ж кроки але для змінної const
+// Помилка 1
+// const userName2;
+const userName2 = 'Some name';
+
+alert(userName2);
+// Помилка 2
+// userName2 = 'Anton';
+
+alert(userName2);
+
+alert('Завдання виконано! Молодець');
