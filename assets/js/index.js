@@ -10,7 +10,7 @@
 // alert('Hello World');
 
 // String
-'asdmsa;lds 213 342343  44po43j43p';
+"asdmsa;lds 213 342343  44po43j43p";
 "asdkhsakljdhsjfhdsfjdk jfdweklfe";
 
 `sdnsdlsndl nl n234 9403 `;
@@ -34,6 +34,39 @@ null;
 undefined;
 
 // Symbol
-Symbol('опис');
+Symbol("опис");
 
 // alert( typeof null );
+
+// створення змінних
+// оголошення змінної
+let age;
+let Age;
+
+let longVariableName;
+
+let LongVariableName;
+
+let LONG_VARIABLE_NAME;
+
+// BAD
+// let змінна;
+// let long-variable-name;
+// let let;
+// let true;
+// let var;
+
+alert(age);
+
+// присвоєння значення змінній
+age = 50;
+
+alert(age);
+
+// let catName;
+// catName = 'Vasyl';
+
+// ініціалізація змінної
+let catName = 'Vasyl';
+
+alert(catName);
