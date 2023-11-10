@@ -192,10 +192,10 @@ let x = 25;
 +50;
 
 let badNumber1 = "500";
-console.log(+ badNumber1);
+console.log(+badNumber1);
 
-console.log(+'asffdgrfasdds'); // NaN
-console.log(+'0xFA45BC'); // 0x - ставиться перед шістнадцятковими числами
+console.log(+"asffdgrfasdds"); // NaN
+console.log(+"0xFA45BC"); // 0x - ставиться перед шістнадцятковими числами
 
 // Логіка
 // ! - не щось
@@ -203,10 +203,21 @@ console.log(+'0xFA45BC'); // 0x - ставиться перед шістнадц
 !true; // false
 !false; // true
 
-!'test'; // false
+!"test"; // false
 
 // перетворення значення до булевого
-!!'test'; // true;
+!!"test"; // true;
 
 !!502;
 
+// порівняння
+100 > 50; // true
+5 < 5000000; // true
+1 > 99999; // false
+
+console.log('who is better / bigger');
+console.log(!('cat' > 'mouse')); // false посимвольно по позиції в таблиці юнікоду
+
+50 > 50 // false
+50 >= 50 // true
+// <=
