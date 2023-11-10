@@ -263,3 +263,17 @@ console.log(10 || NaN); // 10
 console.log(null || NaN); // NaN
 
 // 10 < x1 && x1 < 100 && 500 > 5 
+
+let lastNumber = 50;
+
+lastNumber--; // 49
+
+// lastNumber = lastNumber + 20; // 69
+
+lastNumber += 20; // 69
+
+lastNumber++;
+
+lastNumber += 1;
+
+// -=, *=, /= ...
