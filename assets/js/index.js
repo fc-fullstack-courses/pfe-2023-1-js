@@ -164,3 +164,22 @@ console.log(5 ** 2);
 
 console.log('-5 ** 2');
 console.log((-5) ** 2);
+
+// оперератори інкрементації / декрементації
+
+let num1 = 10;
+// num1 = num1 + 1; // 11
+console.log('++');
+console.log(num1); // 10
+
+// префіксний інкремент + 1
+console.log(++num1); // 11
+
+// постфіксний інкремент
+console.log(num1++); // 11
+console.log(num1); // 12
+
+// декременти - 1
+console.log(--num1); // 11
+console.log(num1--); // 11
+console.log(num1); // 10
