@@ -67,7 +67,7 @@ age = 50;
 // catName = 'Vasyl';
 
 // ініціалізація змінної
-let catName = 'Vasyl';
+let catName = "Vasyl";
 
 // alert(catName);
 
@@ -76,14 +76,14 @@ let userName1;
 // подивіться на її значення
 // alert(userName1);
 // присвойте цій зміній нове значення
-userName1 = 'Kyrylo';
+userName1 = "Kyrylo";
 // подивіться на її значення ще раз
 // alert(userName1);
 
 // повторіть ті ж кроки але для змінної const
 // Помилка 1
 // const userName2;
-const userName2 = 'Some name';
+const userName2 = "Some name";
 
 // alert(userName2);
 // Помилка 2
@@ -101,19 +101,19 @@ let testVariable; // undefined
 
 testVariable = 50; // number
 
-testVariable = 'asdjhsalfdsfds'; // string
+testVariable = "asdjhsalfdsfds"; // string
 
 testVariable = false; // boolean
 
-30 + 70 // 100
+30 + 70; // 100
 
 let number1 = 30;
 
 let number2 = 70;
 
-number1 + number2 // 100
+number1 + number2; // 100
 
-number2 = '50';
+number2 = "50";
 
 // number1 - number2 // 80 / '3050'
 
@@ -124,52 +124,51 @@ number2 = '50';
 
 // console.log( number1 - number2 );
 
-// 
-(50 + 50) * 25 // 2500
-
+//
+(50 + 50) * 25; // 2500
 
 // матиматичні оператори
 
 // +
-console.log('2 + 2');
+console.log("2 + 2");
 console.log(2 + 2);
 
-console.log('0.1 + 0.2');
+console.log("0.1 + 0.2");
 console.log(0.1 + 0.2);
 
 console.log("30 + '50'");
-console.log(30 + '50'); // перетворення на рядок
+console.log(30 + "50"); // перетворення на рядок
 
-console.log('true + false');
+console.log("true + false");
 console.log(true + false);
 
 // -
 
 console.log("30 - '50'");
-console.log(30 - '50');
+console.log(30 - "50");
 
 // *
 console.log(2 * 3);
 // /
 console.log(20 / 3);
 // % - залишок від ділення
-console.log( -9 % 3);
-console.log( 9 % -3);
+console.log(-9 % 3);
+console.log(9 % -3);
 // ** - зведення у ступінь
-console.log('2 ** 3');
+console.log("2 ** 3");
 console.log(2 ** 3);
 
-console.log('5 ** 2');
+console.log("5 ** 2");
 console.log(5 ** 2);
 
-console.log('-5 ** 2');
+console.log("-5 ** 2");
 console.log((-5) ** 2);
 
 // оперератори інкрементації / декрементації
 
 let num1 = 10;
 // num1 = num1 + 1; // 11
-console.log('++');
+console.log("++");
 console.log(num1); // 10
 
 // префіксний інкремент + 1
@@ -183,3 +182,18 @@ console.log(num1); // 12
 console.log(--num1); // 11
 console.log(num1--); // 11
 console.log(num1); // 10
+
+// унарний мінус
+-50;
+let x = 25;
+-x;
+
+// унарний плюс - спосіб приведення значення до числового
++50;
+
+let badNumber1 = "500";
+console.log(+ badNumber1);
+
+console.log(+'asffdgrfasdds'); // NaN
+console.log(+'0xFA45BC'); // 0x - ставиться перед шістнадцятковими числами
+
