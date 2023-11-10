@@ -197,3 +197,16 @@ console.log(+ badNumber1);
 console.log(+'asffdgrfasdds'); // NaN
 console.log(+'0xFA45BC'); // 0x - ставиться перед шістнадцятковими числами
 
+// Логіка
+// ! - не щось
+
+!true; // false
+!false; // true
+
+!'test'; // false
+
+// перетворення значення до булевого
+!!'test'; // true;
+
+!!502;
+
