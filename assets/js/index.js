@@ -74,21 +74,93 @@ let catName = 'Vasyl';
 // оголосіть якусь змінну за допомогою let
 let userName1;
 // подивіться на її значення
-alert(userName1);
+// alert(userName1);
 // присвойте цій зміній нове значення
 userName1 = 'Kyrylo';
 // подивіться на її значення ще раз
-alert(userName1);
+// alert(userName1);
 
 // повторіть ті ж кроки але для змінної const
 // Помилка 1
 // const userName2;
 const userName2 = 'Some name';
 
-alert(userName2);
+// alert(userName2);
 // Помилка 2
 // userName2 = 'Anton';
 
-alert(userName2);
+// alert(userName2);
 
-alert('Завдання виконано! Молодець');
+// alert('Завдання виконано! Молодець');
+
+// console.log(userName1);
+
+// int number1 = 5;
+
+let testVariable; // undefined
+
+testVariable = 50; // number
+
+testVariable = 'asdjhsalfdsfds'; // string
+
+testVariable = false; // boolean
+
+30 + 70 // 100
+
+let number1 = 30;
+
+let number2 = 70;
+
+number1 + number2 // 100
+
+number2 = '50';
+
+// number1 - number2 // 80 / '3050'
+
+// console.log( number1 + number2 );
+
+// 30       '50'
+// number1 - number2 // -20
+
+// console.log( number1 - number2 );
+
+// 
+(50 + 50) * 25 // 2500
+
+
+// матиматичні оператори
+
+// +
+console.log('2 + 2');
+console.log(2 + 2);
+
+console.log('0.1 + 0.2');
+console.log(0.1 + 0.2);
+
+console.log("30 + '50'");
+console.log(30 + '50'); // перетворення на рядок
+
+console.log('true + false');
+console.log(true + false);
+
+// -
+
+console.log("30 - '50'");
+console.log(30 - '50');
+
+// *
+console.log(2 * 3);
+// /
+console.log(20 / 3);
+// % - залишок від ділення
+console.log( -9 % 3);
+console.log( 9 % -3);
+// ** - зведення у ступінь
+console.log('2 ** 3');
+console.log(2 ** 3);
+
+console.log('5 ** 2');
+console.log(5 ** 2);
+
+console.log('-5 ** 2');
+console.log((-5) ** 2);
