@@ -221,3 +221,21 @@ console.log(!('cat' > 'mouse')); // false посимвольно по позиц
 50 > 50 // false
 50 >= 50 // true
 // <=
+
+let name1 = 'Anton';
+let name2 = 'Vasyl';
+let name3 = 'Anton';
+// 
+console.log(name1 === name2); // false
+console.log(name1 === name3); // true
+
+let var1 = 50;
+let var2 = '50';
+
+var1 == var2; // true / true ПОГАНО
+var1 === var2; // true / false
+
+name1 !== name2; // true
+
+let testVar = NaN;
+testVar === testVar; // false
