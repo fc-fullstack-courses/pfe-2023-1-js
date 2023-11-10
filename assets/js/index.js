@@ -239,3 +239,27 @@ name1 !== name2; // true
 
 let testVar = NaN;
 testVar === testVar; // false
+
+// х1 більше 10 і менше 100
+//  10 < x1 < 100
+let x1 = 150;
+
+// console.log(10 < x1 < 100); // true
+
+// логічне Та && - повертає першу берхню або останню правду
+
+console.log(10 < x1 && x1 < 100); // false
+
+console.log(10 && 50); // 50
+console.log(10 && NaN); // NaN
+console.log(null && NaN); // null
+
+// логічне АБО || - повертає першу правду або останню берхню 
+
+console.log(10 < x1 || x1 < 100); // true
+
+console.log(10 || 50); // 10
+console.log(10 || NaN); // 10
+console.log(null || NaN); // NaN
+
+// 10 < x1 && x1 < 100 && 500 > 5 
