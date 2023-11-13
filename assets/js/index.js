@@ -9,7 +9,7 @@
 // функція може мати будь-яку кількість аргументів
 // alert('Hello there', 'sds', 'asd');
 
-// функції після свого виконання повертають результат, 
+// функції після свого виконання повертають результат,
 // який можна зберігти у змінній або використати іншим чином
 // let userName = prompt('Введіть ваше ім`я');
 
@@ -24,7 +24,6 @@
 
 // alert(greetingText);
 
-
 // Отримати від користувача 2 числа
 // вивести на екран їх суму
 
@@ -33,7 +32,6 @@
 // let num2 = prompt('Введіть друге число');
 
 // alert(+num1 + +num2);
-
 
 // v2
 // let input1 = prompt('Введіть перше число');
@@ -65,13 +63,45 @@ console.log(1);
 // function expression - функціональний вираз
 const myFirstFunction = function () {
   // тіло функції
-  console.log('функція запущена');
-}
+  console.log("функція запущена");
+
+  let x = 20 + 20;
+
+  // повертання значення із функції
+  // функція прпацює до першого return
+  if (x > 10) {
+    return x;
+  }
+
+  console.log("мій код");
+};
 
 console.log(3);
-
-myFirstFunction();
 
 // functional declaration - об'ява функції
 
 // arrow function - функції "стрілки"
+
+const getSumOfTwoNumbers = function () {
+  let num1 = +prompt("Введіть перше число");
+
+  if (num1 !== num1) {
+    return null;
+  }
+
+  let num2 = +prompt("Введіть друге число");
+
+  if (num2 !== num2) {
+    return null;
+  }
+
+  let result = num1 + num2;
+
+  return result;
+};
+
+const funcResult = getSumOfTwoNumbers();
+
+if (typeof funcResult === "number") {
+  alert(funcResult);
+}
