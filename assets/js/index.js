@@ -215,22 +215,22 @@ console.log(+"0xFA45BC"); // 0x - ставиться перед шістнадц
 5 < 5000000; // true
 1 > 99999; // false
 
-console.log('who is better / bigger');
-console.log(!('cat' > 'mouse')); // false посимвольно по позиції в таблиці юнікоду
+console.log("who is better / bigger");
+console.log(!("cat" > "mouse")); // false посимвольно по позиції в таблиці юнікоду
 
-50 > 50 // false
-50 >= 50 // true
+50 > 50; // false
+50 >= 50; // true
 // <=
 
-let name1 = 'Anton';
-let name2 = 'Vasyl';
-let name3 = 'Anton';
-// 
+let name1 = "Anton";
+let name2 = "Vasyl";
+let name3 = "Anton";
+//
 console.log(name1 === name2); // false
 console.log(name1 === name3); // true
 
 let var1 = 50;
-let var2 = '50';
+let var2 = "50";
 
 var1 == var2; // true / true ПОГАНО
 var1 === var2; // true / false
@@ -254,7 +254,7 @@ console.log(10 && 50); // 50
 console.log(10 && NaN); // NaN
 console.log(null && NaN); // null
 
-// логічне АБО || - повертає першу правду або останню берхню 
+// логічне АБО || - повертає першу правду або останню берхню
 
 console.log(10 < x1 || x1 < 100); // true
 
@@ -262,7 +262,7 @@ console.log(10 || 50); // 10
 console.log(10 || NaN); // 10
 console.log(null || NaN); // NaN
 
-// 10 < x1 && x1 < 100 && 500 > 5 
+// 10 < x1 && x1 < 100 && 500 > 5
 
 let lastNumber = 50;
 
@@ -277,3 +277,17 @@ lastNumber++;
 lastNumber += 1;
 
 // -=, *=, /= ...
+
+// умовна конструкція if
+
+console.log("Завжди");
+
+// умова буде приводитися до булевого значення перед перевіркою
+let expression = 10 > 5;
+if (expression) {
+  console.log("Інколи");
+
+  let myVar1234 = "test";
+}
+
+console.log("Завжди");
