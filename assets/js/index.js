@@ -61,10 +61,11 @@
 console.log(1);
 
 // function expression - функціональний вираз
-const myFirstFunction = function () {
+// параметр функції - спеціаьна змінна, доступна тільки всередині функції
+const myFirstFunction = function (testValue, testValue2) {
   // тіло функції
-  console.log("функція запущена");
-
+  console.log(testValue);
+  console.log(testValue2);
   let x = 20 + 20;
 
   // повертання значення із функції
@@ -82,16 +83,12 @@ console.log(3);
 
 // arrow function - функції "стрілки"
 
-const getSumOfTwoNumbers = function () {
-  let num1 = +prompt("Введіть перше число");
-
-  if (num1 !== num1) {
+const getSumOfTwoNumbers = function (num1, num2) {
+  if (num1 !== num1 || typeof num1 !== "number") {
     return null;
   }
 
-  let num2 = +prompt("Введіть друге число");
-
-  if (num2 !== num2) {
+  if (num2 !== num2 || typeof num2 !== "number") {
     return null;
   }
 
@@ -100,8 +97,12 @@ const getSumOfTwoNumbers = function () {
   return result;
 };
 
-const funcResult = getSumOfTwoNumbers();
+// const input1 = +prompt(1);
+// const input2 = +prompt(2);
 
+// const funcResult = getSumOfTwoNumbers(input1, input2);
+
+const funcResult = getSumOfTwoNumbers(50, 50);
 if (typeof funcResult === "number") {
   alert(funcResult);
 }
