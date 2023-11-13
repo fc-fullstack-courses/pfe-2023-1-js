@@ -51,11 +51,27 @@
 // alert(num1 + num2);
 
 // fool protection version
-let num1 = +prompt('Введіть перше число');
-let num2 = +prompt('Введіть друге число');
+// let num1 = +prompt('Введіть перше число');
+// let num2 = +prompt('Введіть друге число');
 
-let result = num1 + num2;
+// let result = num1 + num2;
 
-if(result === result) {
-  alert(result);
+// if(result === result) {
+//   alert(result);
+// }
+
+console.log(1);
+
+// function expression - функціональний вираз
+const myFirstFunction = function () {
+  // тіло функції
+  console.log('функція запущена');
 }
+
+console.log(3);
+
+myFirstFunction();
+
+// functional declaration - об'ява функції
+
+// arrow function - функції "стрілки"
