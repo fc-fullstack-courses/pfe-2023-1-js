@@ -83,14 +83,18 @@ console.log(3);
 
 // arrow function - функції "стрілки"
 
+
+
 const getSumOfTwoNumbers = function (num1, num2) {
   // додавання точки зупинки для дебаггера
   // debugger;
+
   if (num1 !== num1 || typeof num1 !== "number") {
     return null;
   }
 
   if (num2 !== num2 || typeof num2 !== "number") {
+    
     return null;
   }
 
@@ -98,6 +102,10 @@ const getSumOfTwoNumbers = function (num1, num2) {
 
   return result;
 };
+
+const result = getSumOfTwoNumbers(5,8);
+
+console.log(result);
 
 // const input1 = +prompt(1);
 // const input2 = +prompt(2);
@@ -108,3 +116,24 @@ const getSumOfTwoNumbers = function (num1, num2) {
 // if (typeof funcResult === "number") {
 //   alert(funcResult);
 // }
+
+// Області видимості
+
+let test1 = '3dfd';
+
+console.log(test1);
+
+if (true) {
+  let test2 = 645478;
+
+  if(true) {
+    debugger;
+    let test1 = true;
+    console.log(test1);
+    console.log(test2);
+  }
+  console.log(test1);
+}
+
+console.log(test1);
+// console.log(test2); error
