@@ -84,6 +84,8 @@ console.log(3);
 // arrow function - функції "стрілки"
 
 const getSumOfTwoNumbers = function (num1, num2) {
+  // додавання точки зупинки для дебаггера
+  // debugger;
   if (num1 !== num1 || typeof num1 !== "number") {
     return null;
   }
@@ -102,7 +104,7 @@ const getSumOfTwoNumbers = function (num1, num2) {
 
 // const funcResult = getSumOfTwoNumbers(input1, input2);
 
-const funcResult = getSumOfTwoNumbers(50, 50);
-if (typeof funcResult === "number") {
-  alert(funcResult);
-}
+// const funcResult = getSumOfTwoNumbers(50, 50);
+// if (typeof funcResult === "number") {
+//   alert(funcResult);
+// }
