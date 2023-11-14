@@ -10,8 +10,8 @@
 // alert('Hello World');
 
 // String
-"asdmsa;lds 213 342343  44po43j43p";
-"asdkhsakljdhsjfhdsfjdk jfdweklfe";
+'asdmsa;lds 213 342343  44po43j43p';
+'asdkhsakljdhsjfhdsfjdk jfdweklfe';
 
 `sdnsdlsndl nl n234 9403 `;
 
@@ -34,7 +34,7 @@ null;
 undefined;
 
 // Symbol
-Symbol("опис");
+Symbol('опис');
 
 // alert( typeof null );
 
@@ -67,7 +67,7 @@ age = 50;
 // catName = 'Vasyl';
 
 // ініціалізація змінної
-let catName = "Vasyl";
+let catName = 'Vasyl';
 
 // alert(catName);
 
@@ -76,14 +76,14 @@ let userName1;
 // подивіться на її значення
 // alert(userName1);
 // присвойте цій зміній нове значення
-userName1 = "Kyrylo";
+userName1 = 'Kyrylo';
 // подивіться на її значення ще раз
 // alert(userName1);
 
 // повторіть ті ж кроки але для змінної const
 // Помилка 1
 // const userName2;
-const userName2 = "Some name";
+const userName2 = 'Some name';
 
 // alert(userName2);
 // Помилка 2
@@ -101,7 +101,7 @@ let testVariable; // undefined
 
 testVariable = 50; // number
 
-testVariable = "asdjhsalfdsfds"; // string
+testVariable = 'asdjhsalfdsfds'; // string
 
 testVariable = false; // boolean
 
@@ -113,7 +113,7 @@ let number2 = 70;
 
 number1 + number2; // 100
 
-number2 = "50";
+number2 = '50';
 
 // number1 - number2 // 80 / '3050'
 
@@ -130,22 +130,22 @@ number2 = "50";
 // матиматичні оператори
 
 // +
-console.log("2 + 2");
+console.log('2 + 2');
 console.log(2 + 2);
 
-console.log("0.1 + 0.2");
+console.log('0.1 + 0.2');
 console.log(0.1 + 0.2);
 
 console.log("30 + '50'");
-console.log(30 + "50"); // перетворення на рядок
+console.log(30 + '50'); // перетворення на рядок
 
-console.log("true + false");
+console.log('true + false');
 console.log(true + false);
 
 // -
 
 console.log("30 - '50'");
-console.log(30 - "50");
+console.log(30 - '50');
 
 // *
 console.log(2 * 3);
@@ -155,20 +155,20 @@ console.log(20 / 3);
 console.log(-9 % 3);
 console.log(9 % -3);
 // ** - зведення у ступінь
-console.log("2 ** 3");
+console.log('2 ** 3');
 console.log(2 ** 3);
 
-console.log("5 ** 2");
+console.log('5 ** 2');
 console.log(5 ** 2);
 
-console.log("-5 ** 2");
+console.log('-5 ** 2');
 console.log((-5) ** 2);
 
 // оперератори інкрементації / декрементації
 
 let num1 = 10;
 // num1 = num1 + 1; // 11
-console.log("++");
+console.log('++');
 console.log(num1); // 10
 
 // префіксний інкремент + 1
@@ -191,11 +191,11 @@ let x = 25;
 // унарний плюс - спосіб приведення значення до числового
 +50;
 
-let badNumber1 = "500";
+let badNumber1 = '500';
 console.log(+badNumber1);
 
-console.log(+"asffdgrfasdds"); // NaN
-console.log(+"0xFA45BC"); // 0x - ставиться перед шістнадцятковими числами
+console.log(+'asffdgrfasdds'); // NaN
+console.log(+'0xFA45BC'); // 0x - ставиться перед шістнадцятковими числами
 
 // Логіка
 // ! - не щось
@@ -203,10 +203,10 @@ console.log(+"0xFA45BC"); // 0x - ставиться перед шістнадц
 !true; // false
 !false; // true
 
-!"test"; // false
+!'test'; // false
 
 // перетворення значення до булевого
-!!"test"; // true;
+!!'test'; // true;
 
 !!502;
 
@@ -215,22 +215,22 @@ console.log(+"0xFA45BC"); // 0x - ставиться перед шістнадц
 5 < 5000000; // true
 1 > 99999; // false
 
-console.log("who is better / bigger");
-console.log(!("cat" > "mouse")); // false посимвольно по позиції в таблиці юнікоду
+console.log('who is better / bigger');
+console.log(!('cat' > 'mouse')); // false посимвольно по позиції в таблиці юнікоду
 
 50 > 50; // false
 50 >= 50; // true
 // <=
 
-let name1 = "Anton";
-let name2 = "Vasyl";
-let name3 = "Anton";
+let name1 = 'Anton';
+let name2 = 'Vasyl';
+let name3 = 'Anton';
 //
 console.log(name1 === name2); // false
 console.log(name1 === name3); // true
 
 let var1 = 50;
-let var2 = "50";
+let var2 = '50';
 
 var1 == var2; // true / true ПОГАНО
 var1 === var2; // true / false
@@ -280,14 +280,14 @@ lastNumber += 1;
 
 // умовна конструкція if
 
-console.log("Завжди");
+console.log('Завжди');
 
 // умова буде приводитися до булевого значення перед перевіркою
 let expression = 10 > 5;
 if (expression) {
-  console.log("Інколи");
+  console.log('Інколи');
 
-  let myVar1234 = "test";
+  let myVar1234 = 'test';
 }
 
-console.log("Завжди");
+console.log('Завжди');

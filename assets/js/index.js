@@ -74,7 +74,7 @@ const myFirstFunction = function (testValue, testValue2) {
     return x;
   }
 
-  console.log("мій код");
+  console.log('мій код');
 };
 
 console.log(3);
@@ -87,11 +87,11 @@ const getSumOfTwoNumbers = function (num1, num2) {
   // додавання точки зупинки для дебаггера
   // debugger;
 
-  if (num1 !== num1 || typeof num1 !== "number") {
+  if (num1 !== num1 || typeof num1 !== 'number') {
     return null;
   }
 
-  if (num2 !== num2 || typeof num2 !== "number") {
+  if (num2 !== num2 || typeof num2 !== 'number') {
     return null;
   }
 
@@ -116,7 +116,7 @@ console.log(result);
 
 // Області видимості
 
-let test1 = "3dfd";
+let test1 = '3dfd';
 
 console.log(test1);
 
@@ -168,8 +168,7 @@ console.log(test1);
 
 // console.log(let4);
 
-
-var var3 = "test";
+var var3 = 'test';
 
 var var4 = null;
 console.log(var4);
@@ -181,4 +180,4 @@ if (true) {
   console.log(var4);
 }
 
-console.log(var4); // false 
+console.log(var4); // false
