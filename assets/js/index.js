@@ -83,8 +83,6 @@ console.log(3);
 
 // arrow function - функції "стрілки"
 
-
-
 const getSumOfTwoNumbers = function (num1, num2) {
   // додавання точки зупинки для дебаггера
   // debugger;
@@ -94,7 +92,6 @@ const getSumOfTwoNumbers = function (num1, num2) {
   }
 
   if (num2 !== num2 || typeof num2 !== "number") {
-    
     return null;
   }
 
@@ -103,7 +100,7 @@ const getSumOfTwoNumbers = function (num1, num2) {
   return result;
 };
 
-const result = getSumOfTwoNumbers(5,8);
+const result = getSumOfTwoNumbers(5, 8);
 
 console.log(result);
 
@@ -119,15 +116,15 @@ console.log(result);
 
 // Області видимості
 
-let test1 = '3dfd';
+let test1 = "3dfd";
 
 console.log(test1);
 
 if (true) {
   let test2 = 645478;
 
-  if(true) {
-    debugger;
+  if (true) {
+    // debugger;
     let test1 = true;
     console.log(test1);
     console.log(test2);
@@ -137,3 +134,51 @@ if (true) {
 
 console.log(test1);
 // console.log(test2); error
+
+// let let1 = 'test';
+
+// const letFunc1 = function () {
+
+//   let let2 = 12354;
+//   console.log(let1);
+//   console.log(let2);
+// }
+
+// console.log(let2);
+
+// var var1 = 'test';
+
+// const varFunc1 = function () {
+
+//   var var2 = 12354;
+//   console.log(var1);
+//   console.log(var2);
+// }
+
+// console.log(var2);
+
+// let let3 = "test";
+
+// if (true) {
+//   let let4 = false;
+
+//   console.log(let3);
+//   console.log(let4);
+// }
+
+// console.log(let4);
+
+
+var var3 = "test";
+
+var var4 = null;
+console.log(var4);
+
+if (true) {
+  var var4 = false;
+
+  console.log(var3);
+  console.log(var4);
+}
+
+console.log(var4); // false 
