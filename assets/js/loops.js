@@ -20,7 +20,7 @@ let count = 0;
 
 // debugger;
 
-while (count < 4) {
+while (count > 4) {
   // count = count + 1;
   count++;
   console.log('Iteration');
@@ -53,20 +53,31 @@ let counter = 0;
 // }
 // debugger;
 
-while(counter <= 10) {
-  if(counter % 2 !== 0) {
-    counter++;
-    // дострокове завершення поточної ітерації (кола)
-    continue;
-  }
+// while(counter <= 10) {
+//   if(counter % 2 !== 0) {
+//     counter++;
+//     // дострокове завершення поточної ітерації (кола)
+//     continue;
+//   }
 
-  console.log(counter);
+//   console.log(counter);
 
-  counter++;
-}
+//   counter++;
+// }
 
 // while(counter <= 10) {
 //   console.log('iteration');
 //   console.log(counter);
 //   counter += 2;
 // }
+
+// do ... while
+
+let doCounter = 0;
+
+do {
+  // тіло циклу
+  console.log('do ... while');
+  doCounter++;
+} while(doCounter > 10);
+
