@@ -91,6 +91,85 @@ if (accountBalance >= price1) {
 
 // accountBalance >= price1 ? alert('Товар придбано') : alert('Не вистачає грошей');
 
-alert(accountBalance >= price2 ? 'Товар придбано' : 'Не вистачає грошей');
+// alert(accountBalance >= price2 ? 'Товар придбано' : 'Не вистачає грошей');
 
 100 > 10 ? 'Yes' : 100 === 10 ? 'Yes2' : 'No';
+
+// switch ... case
+
+/*
+  1 - класична
+  2 - пепперонні
+  3 - американо
+  4 - 4 сира
+*/
+let itemNumber = +prompt('Яку піццу ви хочете замовити?');
+
+// if (itemNumber === 1) {
+//   alert('Ви замовили класичну піцу');
+// } else if (itemNumber === 2) {
+//   alert('Ви замовили піцу пепперонні');
+// } else if (itemNumber === 3) {
+//   alert('Ви замовили піцу американо');
+// } else if (itemNumber === 4) {
+//   alert('Ви замовили піцу 4 сира');
+// } else {
+//   alert('Некорректний номер піци');
+// }
+
+let totalPrice = 0;
+
+// debugger;
+switch (itemNumber) {
+  // конкретний випадок
+  case 1: {
+    alert('Ви замовили класичну піцу');
+    // totalPrice += 50;
+    // вимикаєте провал кейсів
+    break;
+  }
+  case 2: {
+    alert('Ви замовили піцу пепперонні');
+    // totalPrice += 70;
+    break;
+  }
+  case 3: {
+    alert('Ви замовили піцу американо');
+    // totalPrice += 150;
+    break;
+  }
+  case 4: {
+    alert('Ви замовили піцу 4 сира');
+    // totalPrice += 350;
+    break;
+  }
+  // в якості останнього випадку можна записати default
+  // він вконується для всіх інших випадків
+  default: {
+    alert('Некорректний номер піци');
+  }
+}
+
+// let userScore = 9;
+
+// switch (userScore) {
+//   case 0:
+//   case 1:
+//   case 2:
+//   case 3:
+//     alert('Bad score');
+//     break;
+//   case 4:
+//   case 5:
+//   case 6:
+//   case 7:
+//     alert('normal score');
+//     break;
+//   case 8:
+//   case 9:
+//     alert('good score');
+//     break;
+//   case 10:
+//     alert('perfect score');
+//     break;
+// }
