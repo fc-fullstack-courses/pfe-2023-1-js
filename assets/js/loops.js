@@ -94,6 +94,12 @@ for ( let counter = 0; counter < 10; counter++ ) {
   console.log('for');
 }
 
+// i, j, ... - типові назви лічільниківі для циклів 
+// for ( let i = 0; i < 10; i++ ) {
+//   // тіло циклу
+//   console.log('for');
+// }
+
 // безкінечний цикл for
 // for ( ;; ) {
 //   // тіло циклу
