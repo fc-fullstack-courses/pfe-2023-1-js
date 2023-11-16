@@ -81,3 +81,21 @@ do {
   doCounter++;
 } while(doCounter > 10);
 
+// for 
+/*
+  for ( старт ; умова ; крок ) {
+
+  }
+*/
+
+// debugger;
+for ( let counter = 0; counter < 10; counter++ ) {
+  // тіло циклу
+  console.log('for');
+}
+
+// безкінечний цикл for
+// for ( ;; ) {
+//   // тіло циклу
+//   alert('for');
+// }
