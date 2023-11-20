@@ -95,3 +95,24 @@ console.log(phone.abracadabra);
 console.log(phone.operator);
 // alert(phone.price);
 // phone.call();
+
+// Створити функцію, яка спираючись на об'єкт телефону
+// буде повертати рядок наступного виду:
+// 'Телефон Nokia 3310 Max коштує 9999.99 гривень'
+
+const printPhoneData = function (phoneObject) {
+  // debugger;
+  // Nokia
+  // let phoneBrand = phoneObject.brand;
+  // let phoneModel = phoneObject.model;
+  // let phonePrice = phoneObject.price;
+
+  // Телефон Nokia
+  // let phoneDataString  = 'Телефон Nokia 3310 Max коштує 9999.99 гривень';
+
+  // let phoneDataString = 'Телефон ' + phoneBrand + ' ' + phoneModel + ' коштує ' + phonePrice + ' гривень';
+  // return phoneDataString;
+
+  return 'Телефон ' + phoneObject.brand + ' ' + phoneObject.model + ' коштує ' + phoneObject.price + ' гривень';
+}
+
