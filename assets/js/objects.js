@@ -163,6 +163,7 @@ const cat = {
   isMale: true,
   age: 3,
   color: 'white',
+  sidfbidfids: ''
 };
 
 console.log(cat.name);
@@ -192,3 +193,12 @@ console.log(cat.breed);
 
 // let breed = undefined;
 // breed = 'Maine-Coon';
+
+// видалення властивостей об'єкту
+delete cat.sidfbidfids;
+
+console.log(cat);
+// змінні так не видаляються
+delete cat;
+
+console.log(cat);
