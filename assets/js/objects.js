@@ -116,3 +116,37 @@ const printPhoneData = function (phoneObject) {
   return 'Телефон ' + phoneObject.brand + ' ' + phoneObject.model + ' коштує ' + phoneObject.price + ' гривень';
 }
 
+// отримання доступу до спеціфічно названих властивостей
+const testObj = {
+  key: 'value 1',
+  'my key': 'value 2',
+  1: 'value 3',
+  keyLast: 'value 4',
+  nested: {
+    deep1: true,
+    deep2: 'amffdoifmofv',
+    deep3 : {
+
+    }
+  }
+}
+
+console.log(testObj.key);
+console.log(testObj.keyLast);
+// console.log(testObj.'my key'); ERROR
+
+// доступ до властивості з можливістю обчислення
+// обчислювальні власитивості
+console.log(testObj['my key']);
+// до змінної
+let x = 'my key';
+console.log(testObj[x]);
+
+// console.log(testObj.1); ERROR
+console.log(testObj[1]);
+
+console.log(testObj.nested.deep2);
+console.log(testObj['nested']['deep2']);
+console.log(testObj['nested'].deep2);
+
+// console.log(testObj.user.name); ERROR
