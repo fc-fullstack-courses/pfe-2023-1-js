@@ -66,3 +66,14 @@ let hamster = {
 
   телефон також має вміти дзвонити
 */
+
+let phone = {
+  brand : 'Nokia',
+  model: '3310 Max',
+  price: 9999.99,
+  color: 'black',
+  isOn: true,
+  call : function () {
+    console.log('calling ...')
+  }
+};
