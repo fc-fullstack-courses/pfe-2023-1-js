@@ -20,7 +20,7 @@ let count = 0;
 
 // debugger;
 
-while (count > 4) {
+while (count < 4) {
   // count = count + 1;
   count++;
   console.log('Iteration');
@@ -105,3 +105,14 @@ for ( let counter = 0; counter < 10; counter++ ) {
 //   // тіло циклу
 //   alert('for');
 // }
+
+// Знайти суму чисел у диапазоні від 1 до 100.
+//  1 + 2 + 3 + 4 + 5 + 6 ... + 100
+
+let result = 1;
+
+for(let i = 2; i <= 100; i++) {
+  result += i;
+}
+console.log(result);
+
