@@ -73,7 +73,25 @@ let phone = {
   price: 9999.99,
   color: 'black',
   isOn: true,
+  operator: null,
   call : function () {
     console.log('calling ...')
   }
 };
+
+// доступ до об'єкта
+console.log(phone);
+
+// alert(phone); // приводить до рядка перед відображенням
+// об'єкти в рядок без сторонньої допомого переводяться погано
+
+// console.log(phone + '');
+
+// доступ до властивостей об'єкта
+// назвуЗмінноїОбь'єкта.назвуВластивості
+
+console.log(phone.price);
+console.log(phone.abracadabra);
+console.log(phone.operator);
+// alert(phone.price);
+// phone.call();
