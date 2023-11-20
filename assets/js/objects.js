@@ -10,34 +10,34 @@ let email1 = 'admin@gmail.com';
 let object = {
   // властивості об'єкта
   // властивість складається з ключа (назва властивості)
-  // і значення 
+  // і значення
   key: 'value',
   key2: 'value2',
   key3: 500,
   // метод - властивість об'єкта, значененя якої убде функцією
-  action1 : function () {
+  action1: function () {
     console.log('something');
-  }
+  },
 };
 
-// 
+//
 let toyCar = {
   color: 'yellow',
   brand: 'Honda',
   model: 'S2000',
-  fuelTank : 30,
-  drive: function() {
-    alert('car id driving')
-  }
-}
+  fuelTank: 30,
+  drive: function () {
+    alert('car id driving');
+  },
+};
 
 let me = {
   name: 'Kyrylo',
-  height: 1.70,
+  height: 1.7,
   speak: function () {
     alert('bla bla bla');
-  }
-}
+  },
+};
 
 // Створення об'єктів
 let hamster1 = {}; // літеральний, часто
@@ -49,9 +49,9 @@ let hamster = {
   breed: 'Jungar',
   // gender: 'male',
   // назви з декількох слів прийнято писати в кемелКейсі
-  isMale : true,
+  isMale: true,
   nickname: 'Bobick',
-  age: 3
+  age: 3,
 };
 
 /*
@@ -68,15 +68,15 @@ let hamster = {
 */
 
 let phone = {
-  brand : 'Nokia',
+  brand: 'Nokia',
   model: '3310 Max',
   price: 9999.99,
   color: 'black',
   isOn: true,
   operator: null,
-  call : function () {
-    console.log('calling ...')
-  }
+  call: function () {
+    console.log('calling ...');
+  },
 };
 
 // доступ до об'єкта
@@ -113,8 +113,16 @@ const printPhoneData = function (phoneObject) {
   // let phoneDataString = 'Телефон ' + phoneBrand + ' ' + phoneModel + ' коштує ' + phonePrice + ' гривень';
   // return phoneDataString;
 
-  return 'Телефон ' + phoneObject.brand + ' ' + phoneObject.model + ' коштує ' + phoneObject.price + ' гривень';
-}
+  return (
+    'Телефон ' +
+    phoneObject.brand +
+    ' ' +
+    phoneObject.model +
+    ' коштує ' +
+    phoneObject.price +
+    ' гривень'
+  );
+};
 
 // отримання доступу до спеціфічно названих властивостей
 const testObj = {
@@ -125,11 +133,9 @@ const testObj = {
   nested: {
     deep1: true,
     deep2: 'amffdoifmofv',
-    deep3 : {
-
-    }
-  }
-}
+    deep3: {},
+  },
+};
 
 console.log(testObj.key);
 console.log(testObj.keyLast);
@@ -150,3 +156,39 @@ console.log(testObj['nested']['deep2']);
 console.log(testObj['nested'].deep2);
 
 // console.log(testObj.user.name); ERROR
+
+// Зміна об'єкту
+const cat = {
+  name: 'fwfewnkmrgfskjfdsal',
+  isMale: true,
+  age: 3,
+  color: 'white',
+};
+
+console.log(cat.name);
+
+cat.name = 'Nikki';
+
+console.log(cat.name);
+
+console.log(cat.age);
+
+cat.age++;
+
+console.log(cat.age);
+
+cat.age += 2;
+
+console.log(cat.age);
+
+// cat = 12354;
+// cat = {};
+
+// додавання нових властивостей до об'єкту
+console.log(cat.breed);
+cat.breed = 'Maine-Coon';
+
+console.log(cat.breed);
+
+// let breed = undefined;
+// breed = 'Maine-Coon';
