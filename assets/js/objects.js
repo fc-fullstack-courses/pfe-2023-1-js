@@ -1,3 +1,4 @@
+'use strict';
 // Objects
 
 // приклад акаунта користувача
@@ -200,7 +201,7 @@ delete cat.sidfbidfids;
 
 console.log(cat);
 // змінні так не видаляються
-delete cat;
+// delete cat;
 
 console.log(cat);
 /*
@@ -222,3 +223,21 @@ phone.price = {
 phone.pin = '2492';
 
 delete phone.pin;
+
+function test1 () {
+  console.log(this); // undefined (strict mode) || Window (default)
+}
+
+test1();
+
+const testObj1 = {
+  name: 'Hi there',
+  testFunc: function () {
+    console.log(this); // testObj1
+    this.isParentObject = true;
+  }
+}
+
+testObj1.testFunc();
+
+console.log(testObj1);
