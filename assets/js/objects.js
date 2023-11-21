@@ -224,7 +224,7 @@ phone.pin = '2492';
 
 delete phone.pin;
 
-function test1 () {
+function test1() {
   console.log(this); // undefined (strict mode) || Window (default)
 }
 
@@ -235,9 +235,62 @@ const testObj1 = {
   testFunc: function () {
     console.log(this); // testObj1
     this.isParentObject = true;
-  }
-}
+  },
+};
 
 testObj1.testFunc();
 
 console.log(testObj1);
+
+/*
+зробити функцію printPhoneData методом об'єкта phone
+тепер при запуску цього метода має виводитися інформація 
+про телефон у якого її запустили, 
+і вона не має приймати вхідних параметрів
+*/
+
+let phone2 = {
+  brand: 'Nokia',
+  model: '3310 Max',
+  price: 19999.99,
+  color: 'black',
+  isOn: true,
+  operator: null,
+  call: function () {
+    console.log('calling ...');
+  },
+  printPhoneData: function () {
+    return (
+      'Телефон ' +
+      this.brand +
+      ' ' +
+      this.model +
+      ' коштує ' +
+      this.price +
+      ' UAH'
+    );
+  },
+};
+
+let phone3 = {
+  brand: 'Apple',
+  model: 'iPhone XLVII',
+  price: 59999.99,
+  color: 'white',
+  isOn: true,
+  operator: null,
+  call: function () {
+    console.log('calling ...');
+  },
+  printPhoneData: function () {
+    return (
+      'Телефон ' +
+      this.brand +
+      ' ' +
+      this.model +
+      ' коштує ' +
+      this.price +
+      ' UAH'
+    );
+  },
+};
