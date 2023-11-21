@@ -119,8 +119,9 @@ const printPhoneData = function (phoneObject) {
     ' ' +
     phoneObject.model +
     ' коштує ' +
-    phoneObject.price +
-    ' гривень'
+    phoneObject.price.value +
+    ' ' +
+    phoneObject.price.currency
   );
 };
 
@@ -163,7 +164,7 @@ const cat = {
   isMale: true,
   age: 3,
   color: 'white',
-  sidfbidfids: ''
+  sidfbidfids: '',
 };
 
 console.log(cat.name);
@@ -212,3 +213,12 @@ console.log(cat);
 
   видаліть властивість pin з телефону
 */
+
+phone.price = {
+  value: 9999,
+  currency: 'UAH',
+};
+
+phone.pin = '2492';
+
+delete phone.pin;
