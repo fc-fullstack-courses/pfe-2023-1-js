@@ -1,4 +1,8 @@
+'use strict';
 // Функції
+
+// testVar = 12345;
+// console.log(testVar);
 
 // alert;
 // console.log;
@@ -87,6 +91,7 @@ sum2(5,5); // NORMAL
 
 // functional declaration - об'ява функції
 function sum2(num1, num2) {
+  debugger;
   return num1 + num2;
 }
 
@@ -96,7 +101,7 @@ sum2(5,5); // NORMAL
 
 const getSumOfTwoNumbers = function (num1, num2) {
   // додавання точки зупинки для дебаггера
-  // debugger;
+  debugger;
 
   if (num1 !== num1 || typeof num1 !== 'number') {
     return null;
@@ -111,9 +116,9 @@ const getSumOfTwoNumbers = function (num1, num2) {
   return result;
 };
 
-const result = getSumOfTwoNumbers(5, 8);
+// const result = getSumOfTwoNumbers(5, 8);
 
-console.log(result);
+// console.log(result);
 
 // const input1 = +prompt(1);
 // const input2 = +prompt(2);
