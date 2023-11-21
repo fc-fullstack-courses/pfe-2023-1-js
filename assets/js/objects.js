@@ -294,3 +294,63 @@ let phone3 = {
     );
   },
 };
+
+// Функція-конструктор - альтернативний спосіб створення об'єктів
+// з потрібною нам структурою
+// назва за узгодженням пишеться в PascalCase
+// function Phone (brand, model, price, color, isOn, operator) {
+//   let newPhone = {
+//     // brand: brand,
+//     // model: model,
+//     // price: price,
+//     // color: color,
+//     // isOn: isOn,
+//     // operator: operator
+//     brand,
+//     model,
+//     price,
+//     color,
+//     isOn,
+//     operator
+//   }
+
+//   // return true;
+// }
+
+function Phone(brand, model, price, color, isOn, operator) {
+  this.brand = brand;
+  this.model = model;
+  this.price = price;
+  this.color = color;
+  this.isOn = isOn;
+  this.operator = operator;
+
+  this.call = function () {
+    console.log('calling ...');
+  };
+
+  this.printPhoneData = function () {
+    return (
+      'Телефон ' +
+      this.brand +
+      ' ' +
+      this.model +
+      ' коштує ' +
+      this.price +
+      ' UAH'
+    );
+  };
+}
+
+// має бути вже повноцінний об'єкт телефона
+// const phone5 = Phone('Test', 'Best model', 150, 'rainbow', true, 'Lifecell');
+
+// перевод в режим конструктора
+const phone6 = new Phone(
+  'Apple',
+  'iPhone 15',
+  150000,
+  'blue',
+  false,
+  'Vodafone'
+);
