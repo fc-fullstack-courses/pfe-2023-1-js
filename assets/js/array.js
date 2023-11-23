@@ -49,7 +49,6 @@ arr1.push(null);
 
 const newLength = arr1.push('test', false, {});
 
-
 // видалення останньго елементу з кінця массиву
 
 console.log(arr1);
@@ -88,3 +87,18 @@ const deletedValue3 = arr1.shift();
 console.log(arr1);
 console.log(deletedValue3);
 
+//
+console.log('=====splice======');
+console.log(arr1);
+// початковий індекс, з якого відбуваються зміни
+// arr1.splice(2);
+// негативний індекс рахується з кінця масиву
+// arr1.splice(-2);
+// друге число казує кількість елементів для видалення
+// arr1.splice(2, 2);
+// з третього аргументу всі значення будуть додаватися
+// розпочинаючи з вказаного індексу
+const spliceResult = arr1.splice(2, 1, 'test', 'original');
+console.log(arr1);
+// splice повертає масив з видаленими значеннями
+console.log(spliceResult);
