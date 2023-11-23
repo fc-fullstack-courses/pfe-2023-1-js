@@ -354,3 +354,56 @@ const phone6 = new Phone(
   false,
   'Vodafone'
 );
+
+console.log('========================================');
+
+let testValue1 = 'Test value';
+let testValue2 = 'Other test value';
+let testValue3 = 'Other test value';
+
+console.log(testValue1 === testValue2); // false
+console.log(testValue2 === testValue3); // true
+
+console.log('========================================');
+
+const newTestObj1 = {
+  test: 10
+}
+
+const newTestObj2 = {
+  notTest: 20
+}
+
+const newTestObj3 = {
+  notTest: 20
+}
+
+const newTestObj4 = newTestObj2;
+
+console.log(newTestObj1 === newTestObj2); // false
+console.log(newTestObj2 === newTestObj3); // false
+
+console.log('========================================');
+
+console.log(newTestObj2 === newTestObj2); // true
+console.log(newTestObj2 === newTestObj4); // true
+
+console.log('========================================');
+
+
+newTestObj2.notTest = 40;
+console.log(newTestObj2); 
+
+console.log(newTestObj4); 
+newTestObj4.test = false;
+
+console.log(newTestObj2); 
+
+
+function testFunc (someObj) {
+  someObj.someValue = 500;
+
+  return someObj;
+}
+
+const lastObject = testFunc(newTestObj2);
