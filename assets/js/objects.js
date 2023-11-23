@@ -367,16 +367,16 @@ console.log(testValue2 === testValue3); // true
 console.log('========================================');
 
 const newTestObj1 = {
-  test: 10
-}
+  test: 10,
+};
 
 const newTestObj2 = {
-  notTest: 20
-}
+  notTest: 20,
+};
 
 const newTestObj3 = {
-  notTest: 20
-}
+  notTest: 20,
+};
 
 const newTestObj4 = newTestObj2;
 
@@ -390,17 +390,15 @@ console.log(newTestObj2 === newTestObj4); // true
 
 console.log('========================================');
 
-
 newTestObj2.notTest = 40;
-console.log(newTestObj2); 
+console.log(newTestObj2);
 
-console.log(newTestObj4); 
+console.log(newTestObj4);
 newTestObj4.test = false;
 
-console.log(newTestObj2); 
+console.log(newTestObj2);
 
-
-function testFunc (someObj) {
+function testFunc(someObj) {
   someObj.someValue = 500;
 
   return someObj;
