@@ -68,3 +68,23 @@ console.log(deletedValue);
 // arr2.pop();
 // const deletedValue2 = arr2.pop();
 
+// додавання елемент(-ів) до початку масиву
+console.log('=====unshift======');
+console.log(arr1);
+arr1.unshift('unshifted 1');
+console.log(arr1);
+arr1.unshift(true, 'test 1', 'test 2');
+console.log(arr1);
+
+// видалення елементу з початку массиву
+console.log('=====shift======');
+console.log(arr1);
+
+arr1.shift();
+
+console.log(arr1);
+
+const deletedValue3 = arr1.shift();
+console.log(arr1);
+console.log(deletedValue3);
+
