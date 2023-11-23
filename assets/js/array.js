@@ -26,13 +26,26 @@ const vipEmails = [
 // console.log(typeof vipEmails); // object
 
 // console.log(vipEmailsObj);
-console.log(vipEmails);
+// console.log(vipEmails);
 
 // відобразити другий елемент у массиві в консолі
-console.log(vipEmails[1]);
+// console.log(vipEmails[1]);
 
 // додайте 5 елемент до массиву 'almostlastmail@mail.com'
-vipEmails[4] = 'almostlastmail@mail.com';
+// vipEmails[4] = 'almostlastmail@mail.com';
 // vipEmails[4000] = 'almostlastmail@mail.com';
 
 // vipEmails.test = 'almostlastmail@mail.com';
+
+// методи конструктора (статичними)
+// Array.isArray();
+
+const arr1 = [];
+
+// додавання елементу в кінець массиву
+arr1.push(100);
+
+arr1.push(null);
+
+const newLength = arr1.push('test', false, {});
+
