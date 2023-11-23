@@ -49,3 +49,22 @@ arr1.push(null);
 
 const newLength = arr1.push('test', false, {});
 
+
+// видалення останньго елементу з кінця массиву
+
+console.log(arr1);
+arr1.pop();
+console.log(arr1);
+
+const deletedValue = arr1.pop();
+console.log(arr1);
+console.log(deletedValue);
+
+// const arr2 = [];
+
+// arr2.pop();
+// arr2.pop();
+// arr2.pop();
+// arr2.pop();
+// const deletedValue2 = arr2.pop();
+
