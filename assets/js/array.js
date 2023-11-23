@@ -98,7 +98,39 @@ console.log(arr1);
 // arr1.splice(2, 2);
 // з третього аргументу всі значення будуть додаватися
 // розпочинаючи з вказаного індексу
-const spliceResult = arr1.splice(2, 1, 'test', 'original');
+const spliceResult = arr1.splice(2, 1, { test: 'oh no' }, 'test', 'original');
 console.log(arr1);
 // splice повертає масив з видаленими значеннями
 console.log(spliceResult);
+
+console.log('=====slice======');
+console.log(arr1);
+// копія всього масиву
+const copy1 = arr1.slice();
+console.log(copy1);
+// копіювати починаючи з вказаного індексу
+const copy2 = arr1.slice(2);
+const copy3 = arr1.slice(-2);
+console.log(copy2);
+console.log(copy3);
+
+// другий параметр вказуює ДО якого індексу копіювати
+const copy4 = arr1.slice(2, 4);
+const copy5 = arr1.slice(2, -2);
+console.log(copy4);
+console.log(copy5);
+
+console.log('=====slice trics======');
+
+console.log(copy5 === arr1);
+console.log(copy5[0] === arr1[2]);
+
+/*
+
+  видалити п'ять останніх елементів за один раз
+  у массиві після другого елементу видалити 2 елементи і вставити на їх місце один елемент
+  
+  зробити копію масиву починаючи з 4 елементу і до 7 елементу ВКЛЮЧНО
+  зробити копію масиву починаючи з третього елемента з кінця
+
+*/
