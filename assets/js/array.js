@@ -225,7 +225,7 @@ function printUserCallback(user, index, usersArray) {
   // console.log(usersArray); // масив по якому ходимо
 }
 
-users.forEach(printUserCallback);
+// users.forEach(printUserCallback);
 
 // зробіть масив з числами
 // пройдіться по всім числам в масиві методом forEach
@@ -233,12 +233,19 @@ users.forEach(printUserCallback);
 const nums = [5, 15, -504, 63.5, 10];
 
 function printNumber (number) {
-  console.log(number ** 4);
+  // console.log(number ** 4);
 }
 
 nums.forEach(printNumber);
 
 // передаємо анонімну функцію
 nums.forEach(function (number) {
-  console.log(number ** 4);
+  // console.log(number ** 4);
+});
+
+// map - повертає новий масив з результатами
+// виклику коллбеків для кожного елементу початового масиву
+const newArray = nums.map(function (number) {
+  // console.log(number ** 4);
+  return number ** 4;
 });
