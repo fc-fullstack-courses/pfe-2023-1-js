@@ -253,7 +253,7 @@ const newArray = nums.map(function (number) {
 // filter - повертає новий масив, який складається з елементів
 // які пройшли перевірку у колбек- функції
 
-const betterUsers = ['Andriy', 'Petro', 'Natalka', 'Olena', 'Anton', 'John'];
+const betterUsers = ['Andriy', 'Petro', 'Natalka', 'Olena', 'Anton', 'John', 'Anton'];
 
 const noAntonsAllowed = betterUsers.filter(function callback(name) {
   // if(name !== 'Anton') {
@@ -285,3 +285,24 @@ const isEveryNameAnton = betterUsers.every(function (name) {
   return name === 'Anton';
 });
 
+// find
+const firstAnton = betterUsers.find(function (name) {
+  return name === 'Anton';
+});
+
+const firstAnton2 = noAntonsAllowed.find(function (name) {
+  return name === 'Anton';
+});
+// findIndex
+const antonIndex1 = betterUsers.findIndex(function (name) {
+  return name === 'Anton';
+});
+
+const antonIndex2 = noAntonsAllowed.findIndex(function (name) {
+  return name === 'Anton';
+});
+
+// indexOf
+const antonIndex3 = betterUsers.indexOf('Anton');
+
+const antonIndex4 = noAntonsAllowed.indexOf('Anton');
