@@ -168,9 +168,36 @@ const deepArray = [
 // 'deeper-1'
 // console.log(deepArray[2][3][0]);
 
-const flatted1 = deepArray.flat(1); 
+const flatted1 = deepArray.flat(1);
 const flatted2 = deepArray.flat(3);
 
 // concat
 const concated1 = names.concat('Pavlo', 'Petro');
 const concated2 = names.concat('Pavlo', 'Petro', ['Victoria', ['Kyrylo']]);
+
+/*
+
+  перевірте наявність в масиві значення 10
+
+  створіть масив [1,2,3,[10,20,30,[100,[1000]]],4]
+  отримайте на його основі масив, у якому немає інших масивів
+
+  маючи масиви [1,2,3,4] та [9,8,7,6]
+  отримайте масив [1,2,3,4,10,9,8,7,6]
+
+*/
+
+// перевірте наявність в масиві значення 10
+const has10 = names.includes(10);
+
+//  створіть масив [1,2,3,[10,20,30,[100,[1000]]],4]
+// отримайте на його основі масив, у якому немає інших масивів
+const numbers = [1, 2, 3, [10, 20, 30, [100, [1000]]], 4];
+const flattedNumbers = numbers.flat(Infinity);
+
+// маючи масиви [1,2,3,4] та [9,8,7,6]
+// отримайте масив [1,2,3,4,10,9,8,7,6]
+
+const nums1 = [1, 2, 3, 4];
+const nums2 = [9, 8, 7, 6];
+const finalNums = nums1.concat(10, nums2);
