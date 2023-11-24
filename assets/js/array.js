@@ -143,3 +143,34 @@ console.log(copy5[0] === arr1[2]);
 // const taskCopy1 = arr.slice(3, 7);
 
 // const taskCopy2 = arr.slice(-3);
+
+const names = ['Andriy', 'Anton', 'Ganna', 'John', 'Jane'];
+
+// join
+const namesString = names.join('\\__/');
+console.log(namesString);
+
+// includes
+const isAndriyInArray = names.includes('Andriy');
+const isMarkoInArray = names.includes('Marko');
+
+// reverse
+const reversedArray = names.reverse(); // reversedArray === names -> true
+
+// flat
+const deepArray = [
+  'first',
+  'second',
+  ['deep-1', 'deep-2', 'deep-3', ['deeper-1', ['deepest -1']]],
+  'fourth',
+];
+
+// 'deeper-1'
+// console.log(deepArray[2][3][0]);
+
+const flatted1 = deepArray.flat(1); 
+const flatted2 = deepArray.flat(3);
+
+// concat
+const concated1 = names.concat('Pavlo', 'Petro');
+const concated2 = names.concat('Pavlo', 'Petro', ['Victoria', ['Kyrylo']]);
