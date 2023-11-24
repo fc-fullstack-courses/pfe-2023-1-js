@@ -266,3 +266,22 @@ const noAntonsAllowed = betterUsers.filter(function callback(name) {
 
   return name !== 'Anton';
 });
+
+// some
+const isAntonInArray = betterUsers.some(function(name) {
+  return name === 'Anton';
+});
+
+const isAntonInArray2 = noAntonsAllowed.some(function(name) {
+  return name === 'Anton';
+});
+
+// every
+const isEveryNameString = betterUsers.every(function (name) {
+  return typeof name === 'string';
+});
+
+const isEveryNameAnton = betterUsers.every(function (name) {
+  return name === 'Anton';
+});
+
