@@ -249,3 +249,20 @@ const newArray = nums.map(function (number) {
   // console.log(number ** 4);
   return number ** 4;
 });
+
+// filter - повертає новий масив, який складається з елементів
+// які пройшли перевірку у колбек- функції
+
+const betterUsers = ['Andriy', 'Petro', 'Natalka', 'Olena', 'Anton', 'John'];
+
+const noAntonsAllowed = betterUsers.filter(function callback(name) {
+  // if(name !== 'Anton') {
+  //   // не Антони
+  //   return true; // елемент опиниться у новому масиві
+  // } else {
+  //   // Антони
+  //   return false; // елемент не опиниться у новому масиві
+  // }
+
+  return name !== 'Anton';
+});
