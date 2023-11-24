@@ -51,13 +51,13 @@ const newLength = arr1.push('test', false, {});
 
 // видалення останньго елементу з кінця массиву
 
-console.log(arr1);
+// console.log(arr1);
 arr1.pop();
-console.log(arr1);
+// console.log(arr1);
 
 const deletedValue = arr1.pop();
-console.log(arr1);
-console.log(deletedValue);
+// console.log(arr1);
+// console.log(deletedValue);
 
 // const arr2 = [];
 
@@ -68,28 +68,28 @@ console.log(deletedValue);
 // const deletedValue2 = arr2.pop();
 
 // додавання елемент(-ів) до початку масиву
-console.log('=====unshift======');
-console.log(arr1);
+// console.log('=====unshift======');
+// console.log(arr1);
 arr1.unshift('unshifted 1');
-console.log(arr1);
+// console.log(arr1);
 arr1.unshift(true, 'test 1', 'test 2');
-console.log(arr1);
+// console.log(arr1);
 
 // видалення елементу з початку массиву
-console.log('=====shift======');
-console.log(arr1);
+// console.log('=====shift======');
+// console.log(arr1);
 
 arr1.shift();
 
-console.log(arr1);
+// console.log(arr1);
 
 const deletedValue3 = arr1.shift();
-console.log(arr1);
-console.log(deletedValue3);
+// console.log(arr1);
+// console.log(deletedValue3);
 
-//
-console.log('=====splice======');
-console.log(arr1);
+// //
+// console.log('=====splice======');
+// console.log(arr1);
 // початковий індекс, з якого відбуваються зміни
 // arr1.splice(2);
 // негативний індекс рахується з кінця масиву
@@ -99,31 +99,31 @@ console.log(arr1);
 // з третього аргументу всі значення будуть додаватися
 // розпочинаючи з вказаного індексу
 const spliceResult = arr1.splice(2, 1, { test: 'oh no' }, 'test', 'original');
-console.log(arr1);
-// splice повертає масив з видаленими значеннями
-console.log(spliceResult);
+// console.log(arr1);
+// // splice повертає масив з видаленими значеннями
+// console.log(spliceResult);
 
-console.log('=====slice======');
-console.log(arr1);
+// console.log('=====slice======');
+// console.log(arr1);
 // копія всього масиву
 const copy1 = arr1.slice();
-console.log(copy1);
+// console.log(copy1);
 // копіювати починаючи з вказаного індексу
 const copy2 = arr1.slice(2);
 const copy3 = arr1.slice(-2);
-console.log(copy2);
-console.log(copy3);
+// console.log(copy2);
+// console.log(copy3);
 
 // другий параметр вказуює ДО якого індексу копіювати
-const copy4 = arr1.slice(2, 4);
-const copy5 = arr1.slice(2, -2);
-console.log(copy4);
-console.log(copy5);
+// const copy4 = arr1.slice(2, 4);
+// const copy5 = arr1.slice(2, -2);
+// console.log(copy4);
+// console.log(copy5);
 
-console.log('=====slice trics======');
+// console.log('=====slice trics======');
 
-console.log(copy5 === arr1);
-console.log(copy5[0] === arr1[2]);
+// console.log(copy5 === arr1);
+// console.log(copy5[0] === arr1[2]);
 
 /*
 
@@ -148,7 +148,7 @@ const names = ['Andriy', 'Anton', 'Ganna', 'John', 'Jane'];
 
 // join
 const namesString = names.join('\\__/');
-console.log(namesString);
+// console.log(namesString);
 
 // includes
 const isAndriyInArray = names.includes('Andriy');
@@ -201,3 +201,44 @@ const flattedNumbers = numbers.flat(Infinity);
 const nums1 = [1, 2, 3, 4];
 const nums2 = [9, 8, 7, 6];
 const finalNums = nums1.concat(10, nums2);
+
+const users = [{ id: 0 }, { id: 1 }, { id: 2 }, { id: 3 }];
+
+// for (let i = 0; i < users.length; i++) {
+//   console.log(users[i]);
+// }
+
+// whatToDo - функція зворотнього виклику (callback)
+const doSomething = function (whatToDo, item) {
+  // debugger;
+  whatToDo(item);
+};
+
+// doSomething(alert, 'Magic');
+
+// forEach - виконує фунцію для кожного елементу масиву
+// з починаючи з початку
+function printUserCallback(user, index, usersArray) {
+  // debugger;
+  console.log(user); // поточний елемент
+  // console.log(index); // індекс поточного елемента
+  // console.log(usersArray); // масив по якому ходимо
+}
+
+users.forEach(printUserCallback);
+
+// зробіть масив з числами
+// пройдіться по всім числам в масиві методом forEach
+// і покажіть кожне число в четвертій ступені
+const nums = [5, 15, -504, 63.5, 10];
+
+function printNumber (number) {
+  console.log(number ** 4);
+}
+
+nums.forEach(printNumber);
+
+// передаємо анонімну функцію
+nums.forEach(function (number) {
+  console.log(number ** 4);
+});
