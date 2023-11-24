@@ -134,3 +134,12 @@ console.log(copy5[0] === arr1[2]);
   зробити копію масиву починаючи з третього елемента з кінця
 
 */
+
+// const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+// arr.splice(-5);
+
+// arr.splice(2, 2, 'inserted');
+
+// const taskCopy1 = arr.slice(3, 7);
+
+// const taskCopy2 = arr.slice(-3);
