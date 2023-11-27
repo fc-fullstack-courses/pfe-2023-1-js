@@ -459,22 +459,25 @@ const arr2 = [2];
 
 const videoPrototype = {
   test: function () {
+    console.log(this);
     console.log('this method written in videoPrototype')
   },
   id: 0
 }
 
 const testVideo1 = {
-
+  title: 'test 1'
 }
 
 const testVideo2 = {
-  
+  title: 'test 2'
 }
 
 // встановлюємо прототип до існуючого об'єкта
 testVideo1.__proto__ = videoPrototype;
 testVideo2.__proto__ = videoPrototype;
+
+testVideo1.test();
 
 // videoPrototype.__proto__ = {
 
@@ -507,4 +510,4 @@ const animalPrototype = {
 cat.__proto__ = animalPrototype;
 dog.__proto__ = animalPrototype;
 
-cat.sleep();
+// cat.sleep();
