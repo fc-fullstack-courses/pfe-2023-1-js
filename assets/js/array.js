@@ -267,7 +267,9 @@ const noAntonsAllowed = betterUsers.filter(function callback(name) {
   return name !== 'Anton';
 });
 
-// some
+// some - повертає булеве значення, яке отримує на основі
+// запуску колбеку над елементами. Повертає правду якщо
+// хоч один запуск колбеку повернув правду
 const isAntonInArray = betterUsers.some(function(name) {
   return name === 'Anton';
 });
@@ -276,7 +278,9 @@ const isAntonInArray2 = noAntonsAllowed.some(function(name) {
   return name === 'Anton';
 });
 
-// every
+// every - повертає булеве значення, яке отримує на основі
+// запуску колбеку над елементами. Повертає правду якщо
+// кожен запуск колбеку повернув правду
 const isEveryNameString = betterUsers.every(function (name) {
   return typeof name === 'string';
 });
@@ -285,19 +289,21 @@ const isEveryNameAnton = betterUsers.every(function (name) {
   return name === 'Anton';
 });
 
-// find
+// find - шукає перший елемент в масиві, який задовільняє перевірці в колбекі
 const firstAnton = betterUsers.find(function (name) {
   return name === 'Anton';
 });
 
+// undefined якщо не знайшов
 const firstAnton2 = noAntonsAllowed.find(function (name) {
   return name === 'Anton';
 });
-// findIndex
+// findIndex - шукає індекс першого елемента в масиві, 
+// який задовільняє перевірці в колбекі
 const antonIndex1 = betterUsers.findIndex(function (name) {
   return name === 'Anton';
 });
-
+// -1 якщо не знайшов
 const antonIndex2 = noAntonsAllowed.findIndex(function (name) {
   return name === 'Anton';
 });
