@@ -405,3 +405,77 @@ function testFunc(someObj) {
 }
 
 const lastObject = testFunc(newTestObj2);
+
+// Prototypes
+
+const video = {
+  id: 0,
+  title: 'My first video',
+  description: 'bla bla bla',
+  views: 15000,
+  likes: 150,
+  dislikes: 3,
+  isPrivate: false,
+  comments: [
+    {
+      id: 0,
+      text: 'Best video ever',
+    },
+  ],
+  addView: function () {
+    // треба додати один перегляд
+    return ++this.views;
+  },
+};
+
+let videoId = 0;
+
+function Video(title, description, isPrivate) {
+  this.id = videoId++;
+  this.title = title;
+  this.description = description;
+  this.views = 0;
+  this.likes = 0;
+  this.dislikes = 0;
+  this.isPrivate = isPrivate;
+  this.comments = [];
+
+  this.addView = function () {
+    // треба додати один перегляд
+    return ++this.views;
+  };
+}
+
+const video2 = new Video('Video title', '...', false);
+const video3 = new Video('Video title 2', '...', false);
+console.log('============== PROTOTYPES ===================');
+
+// console.log(video2.addView === video3.addView); // false
+
+const arr1 = [1];
+const arr2 = [2];
+
+// console.log(arr1.map === arr2.map); // true
+
+const videoPrototype = {
+  test: function () {
+    console.log('this method written in videoPrototype')
+  },
+  id: 0
+}
+
+const testVideo1 = {
+
+}
+
+const testVideo2 = {
+  
+}
+
+// встановлюємо прототип до існуючого об'єкта
+testVideo1.__proto__ = videoPrototype;
+testVideo2.__proto__ = videoPrototype;
+
+// videoPrototype.__proto__ = {
+
+// }
