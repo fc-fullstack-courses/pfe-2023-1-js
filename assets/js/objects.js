@@ -160,50 +160,50 @@ console.log(testObj['nested'].deep2);
 // console.log(testObj.user.name); ERROR
 
 // Зміна об'єкту
-const cat = {
-  name: 'fwfewnkmrgfskjfdsal',
-  isMale: true,
-  age: 3,
-  color: 'white',
-  sidfbidfids: '',
-};
+// const cat = {
+//   name: 'fwfewnkmrgfskjfdsal',
+//   isMale: true,
+//   age: 3,
+//   color: 'white',
+//   sidfbidfids: '',
+// };
 
-console.log(cat.name);
+// console.log(cat.name);
 
-cat.name = 'Nikki';
+// cat.name = 'Nikki';
 
-console.log(cat.name);
+// console.log(cat.name);
 
-console.log(cat.age);
+// console.log(cat.age);
 
-cat.age++;
+// cat.age++;
 
-console.log(cat.age);
+// console.log(cat.age);
 
-cat.age += 2;
+// cat.age += 2;
 
-console.log(cat.age);
+// console.log(cat.age);
 
 // cat = 12354;
 // cat = {};
 
 // додавання нових властивостей до об'єкту
-console.log(cat.breed);
-cat.breed = 'Maine-Coon';
+// console.log(cat.breed);
+// cat.breed = 'Maine-Coon';
 
-console.log(cat.breed);
+// console.log(cat.breed);
 
 // let breed = undefined;
 // breed = 'Maine-Coon';
 
 // видалення властивостей об'єкту
-delete cat.sidfbidfids;
+// delete cat.sidfbidfids;
 
-console.log(cat);
+// console.log(cat);
 // змінні так не видаляються
 // delete cat;
 
-console.log(cat);
+// console.log(cat);
 /*
   змініть властивость price у телефоні
     це має стати об'єктом з властивостями
@@ -479,3 +479,32 @@ testVideo2.__proto__ = videoPrototype;
 // videoPrototype.__proto__ = {
 
 // }
+
+/*
+  створіть об'єкти кота та собаки
+    вони мають мати імена
+
+  створіть об'єкт-прототип animal
+    у нього має бути метод, імітуючий сон
+
+  додайте прототип до існючих об'єктів і змусте котика / песика поспати
+*/
+
+const cat = {
+  name : 'Cat'
+}
+
+const dog = {
+  name: 'Dog'
+}
+
+const animalPrototype = {
+  sleep: function () {
+    console.log('sleeping now ...');
+  }
+}
+
+cat.__proto__ = animalPrototype;
+dog.__proto__ = animalPrototype;
+
+cat.sleep();
