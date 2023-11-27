@@ -430,6 +430,13 @@ const video = {
 
 let videoId = 0;
 
+const videoPrototype = {
+  addView: function () {
+    // треба додати один перегляд
+    return ++this.views;
+  },
+}
+
 function Video(title, description, isPrivate) {
   this.id = videoId++;
   this.title = title;
@@ -440,44 +447,45 @@ function Video(title, description, isPrivate) {
   this.isPrivate = isPrivate;
   this.comments = [];
 
-  this.addView = function () {
-    // треба додати один перегляд
-    return ++this.views;
-  };
+  // неоптимальний підхід для конструкторів
+  // this.__proto__ = videoPrototype; 
 }
+// даємо прототип конструктору, а він його сам виставляє екземплярам відео
+Video.prototype = videoPrototype;
+
 
 const video2 = new Video('Video title', '...', false);
 const video3 = new Video('Video title 2', '...', false);
 console.log('============== PROTOTYPES ===================');
 
-// console.log(video2.addView === video3.addView); // false
+console.log(video2.addView === video3.addView); // false
 
 const arr1 = [1];
 const arr2 = [2];
 
 // console.log(arr1.map === arr2.map); // true
 
-const videoPrototype = {
-  test: function () {
-    console.log(this);
-    console.log('this method written in videoPrototype')
-  },
-  id: 0
-}
+// const videoPrototype = {
+//   test: function () {
+//     console.log(this);
+//     console.log('this method written in videoPrototype')
+//   },
+//   id: 0
+// }
 
-const testVideo1 = {
-  title: 'test 1'
-}
+// const testVideo1 = {
+//   title: 'test 1'
+// }
 
-const testVideo2 = {
-  title: 'test 2'
-}
+// const testVideo2 = {
+//   title: 'test 2'
+// }
 
 // встановлюємо прототип до існуючого об'єкта
-testVideo1.__proto__ = videoPrototype;
-testVideo2.__proto__ = videoPrototype;
+// testVideo1.__proto__ = videoPrototype;
+// testVideo2.__proto__ = videoPrototype;
 
-testVideo1.test();
+// testVideo1.test();
 
 // videoPrototype.__proto__ = {
 
@@ -510,5 +518,5 @@ const animalPrototype = {
 cat.__proto__ = animalPrototype;
 dog.__proto__ = animalPrototype;
 
-cat.sleep();
-dog.sleep();
+// cat.sleep();
+// dog.sleep();
