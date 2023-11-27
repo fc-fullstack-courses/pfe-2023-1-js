@@ -503,11 +503,12 @@ const dog = {
 
 const animalPrototype = {
   sleep: function () {
-    console.log('sleeping now ...');
+    console.log(this.name + ' is sleeping now ...');
   }
 }
 
 cat.__proto__ = animalPrototype;
 dog.__proto__ = animalPrototype;
 
-// cat.sleep();
+cat.sleep();
+dog.sleep();
