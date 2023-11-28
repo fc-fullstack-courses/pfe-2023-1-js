@@ -536,3 +536,42 @@ dog.__proto__ = animalPrototype;
       повна зупинка
 
 */
+
+function Car (model, maxSpeed, color) {
+  this.model = model;
+  this.speed = 0;
+  this.maxSpeed = maxSpeed;
+  this.color = color;
+
+  // this.stop = function () {}
+}
+
+const carPrototype = {
+  stop: function () {
+    this.speed = 0;
+    return this.speed;
+  },
+  accelerate: function (addedSpeed) {
+    if(this.speed + addedSpeed <= this.maxSpeed) {
+      this.speed += addedSpeed;
+    } else {
+      this.speed = this.maxSpeed;
+    }
+
+    return this.speed;
+  },
+  decelerate: function (subtractedSpeed) {
+    if(this.speed - subtractedSpeed >= 0) {
+      this.speed -= subtractedSpeed;
+    } else {
+      this.speed = 0;
+    }
+
+    return this.speed;
+  }
+}
+
+Car.prototype = carPrototype;
+
+const car1 = new Car('First', 250, 'black');
+const car2 = new Car('Secoond Hand', 70, 'rust');
