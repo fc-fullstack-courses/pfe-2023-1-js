@@ -54,3 +54,44 @@
 // isNaN('50') // false
 
 // isNaN('sadsdsa') // true
+
+// звичайні змінні
+const camelCase = {};
+
+// конструктори
+const PascalCase = function () {}
+
+// константе значення 
+const UPPER_SNAKE_CASE = 3.14;
+
+// Math
+
+// абсолютне значення числа
+// Math.abs(5); // 5
+// Math.abs(-50) // 50
+
+// округлення в більший бік
+// Math.ceil() // 2
+
+// округлення в менший бік
+// Math.floor(10.99999999999999) // 10
+
+// округлення в ближчий бік
+// Math.round(1.1) // 1
+// Math.round(1.5) // 2
+// Math.round(1.6) // 2
+
+// Math.min(0,1,5,88,-15,1212,-45465) // -45465
+// Math.max(0,1,5,88,-15,1212,-45465) // 1212
+
+// Math.pow(2,3) // 8
+
+// Math.random() випадкове значення від 0 до 1 (одиниця не включно)
+
+
+function getRandomArbitrary(min, max) {
+  return Math.random() * (max - min) + min;
+}
+
+// корень квадратний від числа
+// Math.sqrt(25) // 5
