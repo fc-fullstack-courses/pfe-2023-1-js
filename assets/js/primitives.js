@@ -19,11 +19,38 @@
 // }
 
 // приводить значення до булевого
-const bool2 = Boolean(false); // !!
+// const bool2 = Boolean(false); // !!
 
-const bool3 = Boolean(NaN);
+// const bool3 = Boolean(NaN);
 
-const num1 = Number('asfddsgdsfs'); // +
+// const num1 = Number('asfddsgdsfs'); // +
 
-const str1 = String(500); // '' + 500
+// const str1 = String(500); // '' + 500
 
+
+// Number
+// Number.isFinite(NaN) // false
+
+// Number.isFinite('asdsfds') // false
+
+// Number.isFinite('100') // false
+
+// isFinite(100) // true
+
+// isFinite('100') // true
+
+// Number.isNaN(0) // false
+
+// Number.isNaN(Infinity) // false
+
+// Number.isNaN('1000') // false
+
+// Number.isNaN('asdsfdsfsdf') // false
+
+// Number.isNaN(true) // false
+
+// isNaN(50) // false
+
+// isNaN('50') // false
+
+// isNaN('sadsdsa') // true
