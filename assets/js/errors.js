@@ -19,3 +19,19 @@ console.log('Thing 2');
 // console.dir(myFirstError);
 
 
+const getSumOfTwoNumbers = function (num1, num2) {
+  // додавання точки зупинки для дебаггера
+  debugger;
+
+  if (num1 !== num1 || typeof num1 !== 'number') {
+    throw new TypeError('num1 must be number');
+  }
+
+  if (num2 !== num2 || typeof num2 !== 'number') {
+    throw new TypeError('num2 must be number');
+  }
+
+  let result = num1 + num2;
+
+  return result;
+};
