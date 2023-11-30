@@ -27,7 +27,6 @@
 
 // const str1 = String(500); // '' + 500
 
-
 // Number
 // Number.isFinite(NaN) // false
 
@@ -59,9 +58,9 @@
 const camelCase = {};
 
 // конструктори
-const PascalCase = function () {}
+const PascalCase = function () {};
 
-// константе значення 
+// константе значення
 const UPPER_SNAKE_CASE = 3.14;
 
 // Math
@@ -88,7 +87,6 @@ const UPPER_SNAKE_CASE = 3.14;
 
 // Math.random() випадкове значення від 0 до 1 (одиниця не включно)
 
-
 function getRandomArbitrary(min, max) {
   return Math.random() * (max - min) + min;
 }
@@ -113,11 +111,11 @@ function getRandomArbitrary(min, max) {
 // alert(x + ' * ' + y + ' = ' + x * y);
 // alert(x + ' + ' + y + ' = ' + (x + y));
 
-'text';
-"text";
+('text');
+('text');
 
 `text`; // шаблоний рядок
-// alert(`Глава 2 
+// alert(`Глава 2
 // Ім'я персонажа бла бла бла`);
 
 // let x = +prompt('num 1');
@@ -128,7 +126,6 @@ function getRandomArbitrary(min, max) {
 // console.log(`${x} + ${y} = ${x + y}`);
 // console.log(`${x} / ${y} = ${x / y}`);
 // console.log(`${x} - ${y} = ${x - y}`);
-
 
 const testStr = 'Test string Lorem Ipsum Lorem';
 
@@ -150,7 +147,7 @@ const isOremHere = testStr.includes('Orem');
 const loremStartingIndex = testStr.indexOf('Lorem');
 const oremStartingIndex = testStr.indexOf('Orem');
 
-const testStr2 = testStr.slice(0,4);
+const testStr2 = testStr.slice(0, 4);
 const testStr3 = testStr.slice(-5);
 
 let testStr4 = '       User    Userenko       ';
@@ -160,7 +157,7 @@ const trimmedStr = testStr4.trim();
 // let operator = '   +';
 
 // switch(operator.trim()) {
-//   case '+': console.log('sum'); 
+//   case '+': console.log('sum');
 // }
 
 const lowerCasedStr = testStr.toLowerCase();
@@ -172,3 +169,49 @@ const split1 = testStr.split();
 const split2 = testStr.split(' ');
 const split3 = testStr.split('');
 
+/*
+  створити функцію яка приймає рядок
+  і повертає такий саме рядок, але
+  кожен символ знаходиться у випадковому регістрі
+  
+  'test' -> 'TeST'
+  'test' -> 'tESt'
+  'test' -> 'test'
+*/
+
+function toRandomCase(str) {
+  // 1. зробити новий рядок
+  let resultStr = '';
+
+  // 2. пройтися по str, отримати випадково значеня кожної літери
+  // і приклеїти її до resultStr
+  for (let i = 0; i < str.length; i++) {
+    let letter = str[i];
+    if (Math.random() > 0.5) {
+      resultStr += letter.toUpperCase();
+    } else {
+      resultStr += letter.toLowerCase();
+    }
+  }
+
+  // 3. повернути результат
+  return resultStr;
+}
+
+function toRandomCase2(str) {
+  const lettersArr = str.split('');
+
+  const newLettersArr = lettersArr.map(function (letter) {
+    // if(Math.random() > 0.5) {
+    //   return letter.toUpperCase();
+    // } else {
+    //   return letter.toLowerCase();
+    // }
+
+    const newLetter = Math.random() > 0.5 ? letter.toUpperCase() : letter.toLowerCase();
+    return newLetter;
+  });
+
+  const resultStr = newLettersArr.join('');
+  return resultStr;
+}
