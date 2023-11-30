@@ -128,3 +128,47 @@ function getRandomArbitrary(min, max) {
 // console.log(`${x} + ${y} = ${x + y}`);
 // console.log(`${x} / ${y} = ${x / y}`);
 // console.log(`${x} - ${y} = ${x - y}`);
+
+
+const testStr = 'Test string Lorem Ipsum Lorem';
+
+// console.log(testStr);
+
+const letter1 = testStr.charAt(3);
+const letter2 = testStr[3];
+const letter1Unicode = testStr.charCodeAt(3);
+
+testStr[2] = 'x';
+
+// console.log(testStr);
+
+const newStr1 = testStr.concat('string 1', ' text 2');
+
+const isLoremHere = testStr.includes('Lorem');
+const isOremHere = testStr.includes('Orem');
+
+const loremStartingIndex = testStr.indexOf('Lorem');
+const oremStartingIndex = testStr.indexOf('Orem');
+
+const testStr2 = testStr.slice(0,4);
+const testStr3 = testStr.slice(-5);
+
+let testStr4 = '       User    Userenko       ';
+
+const trimmedStr = testStr4.trim();
+
+// let operator = '   +';
+
+// switch(operator.trim()) {
+//   case '+': console.log('sum'); 
+// }
+
+const lowerCasedStr = testStr.toLowerCase();
+const upperCasedStr = testStr.toUpperCase();
+
+const noLorem = testStr.replace('Lorem', 'some other text');
+
+const split1 = testStr.split();
+const split2 = testStr.split(' ');
+const split3 = testStr.split('');
+
