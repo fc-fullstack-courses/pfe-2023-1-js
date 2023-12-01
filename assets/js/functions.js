@@ -83,7 +83,7 @@ const myFirstFunction = function (testValue, testValue2) {
   console.log('мій код');
 };
 
-myFirstFunction(5,2); // NORMAL
+myFirstFunction(5, 2); // NORMAL
 
 console.log(3);
 
@@ -199,21 +199,21 @@ if (true) {
 console.log(var4); // false
 
 // чисті функції - clear func
-function sum (num1, num2) {
+function sum(num1, num2) {
   return num1 + num2;
 }
 
 // параметр за замовчанням
-function multiply (num1, num2 = 2) {
+function multiply(num1, num2 = 2) {
   return num1 * num2;
 }
 
-function square (num = 1) {
+function square(num = 1) {
   return multiply(num, num);
 }
 
 // детерменовані функції - determined func
-function sum (num1, num2) {
+function sum(num1, num2) {
   let result = num1 + num2;
   console.log(result);
   return result;
@@ -234,20 +234,19 @@ function sum (num1, num2) {
 //   return result;
 // }
 
-
 // функції вищого порядку - HOF (High Order Functions)
 //  функція, що приймає як аргументи інші функції або повертає іншу функцію як результат.
 
-function hof1 (func1) {
-  if(Math.random() > 0.5) {
+function hof1(func1) {
+  if (Math.random() > 0.5) {
     func1();
   }
 }
 
-function hof2 () {
+function hof2() {
   const func2 = function () {
     console.log('boo');
-  }
+  };
 
   return func2;
 }
@@ -257,3 +256,84 @@ const innerFunc = hof2();
 // innerFunc();
 // innerFunc();
 // innerFunc();
+
+// функції - стрілки
+// const arrow = () => {}
+
+const nonArrowSum = function (num1 = 2, num2 = 2) {
+  return num1 + num2;
+};
+
+const arrowSum1 = (num1 = 2, num2 = 2) => {
+  return num1 + num2;
+};
+// скороченний запис
+const arrowSum2 = (num1 = 2, num2 = 2) => num1 + num2;
+
+const nonArrowFunc = function () {
+  console.log(this); // undefined || Window
+};
+
+//  немає свого this,
+// його запозичують з вернього рівня скрипта / у іншої функції
+const arrowFunc = () => {
+  console.log(this); // Window
+};
+
+const rozetkaShop = {
+  name: 'Rozetka',
+  products: [
+    { name: 'prod 1', price: 5000, quantity: 0 },
+    { name: 'prod 2', price: 1000, quantity: 1234 },
+    { name: 'prod 3', price: 200, quantity: 2 },
+    { name: 'prod 4', price: 21200, quantity: 105 },
+    { name: 'prod 5', price: 76800, quantity: 11221 },
+  ],
+  // displayAllProducts: function () {
+  //   this.products.forEach(function(product) {
+  //     console.log(this); // undefined
+  //     console.log(`Shop ${this.name} has product ${product.name} with price ${product.price} and quantity ${product.quantity}`);
+  //   });
+  // }
+  displayAllProductsV1: function () {
+    let that = this;
+    this.products.forEach(function (product) {
+      console.log(that);
+      console.log(
+        `Shop ${that.name} has product ${product.name} with price ${product.price} and quantity ${product.quantity}`
+      );
+    });
+  },
+  displayAllProductsV2: function () {
+    function displayProduct(product) {
+      console.log(this);
+      console.log(
+        `Shop ${this.name} has product ${product.name} with price ${product.price} and quantity ${product.quantity}`
+      );
+    }
+
+    // копія функції displayProduct з конкретно вказаним значенням this яке дорівнює rozetkaShop
+    const bindedCorrectThisFunc = displayProduct.bind(rozetkaShop);
+
+    this.products.forEach(bindedCorrectThisFunc);
+  },
+  displayAllProductsV3: function () {
+
+    // const callback = (product) => {
+    //   console.log(this); // rozetkaShop
+    //   console.log(`Shop ${this.name} has product ${product.name} with price ${product.price} and quantity ${product.quantity}`);
+    // }
+
+    // this.products.forEach(callback);
+
+    this.products.forEach((product) => {
+      console.log(this); // rozetkaShop
+      console.log(`Shop ${this.name} has product ${product.name} with price ${product.price} and quantity ${product.quantity}`);
+    });
+  }
+};
+
+// стрілки не можуть бути конструкторами
+// const test = new arrowFunc(); // TypeError
+
+// у стрілок не має arguments 
