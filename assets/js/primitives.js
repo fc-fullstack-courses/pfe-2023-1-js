@@ -261,7 +261,7 @@ console.log(capitaLetter('i love java script '));
 
 const vowels = ['a', 'e', 'i', 'o', 'u'];
 
-function countVowels(text, vowels) {
+function countVowels(text, vowels = ['a', 'e', 'i', 'o', 'u']) {
   let count = 0;
 
   const lowerCaseText = text.toLowerCase();

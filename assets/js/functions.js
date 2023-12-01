@@ -203,11 +203,12 @@ function sum (num1, num2) {
   return num1 + num2;
 }
 
-function multiply (num1, num2) {
+// параметр за замовчанням
+function multiply (num1, num2 = 2) {
   return num1 * num2;
 }
 
-function square (num) {
+function square (num = 1) {
   return multiply(num, num);
 }
 
