@@ -318,7 +318,6 @@ const rozetkaShop = {
     this.products.forEach(bindedCorrectThisFunc);
   },
   displayAllProductsV3: function () {
-
     // const callback = (product) => {
     //   console.log(this); // rozetkaShop
     //   console.log(`Shop ${this.name} has product ${product.name} with price ${product.price} and quantity ${product.quantity}`);
@@ -328,22 +327,24 @@ const rozetkaShop = {
 
     this.products.forEach((product) => {
       console.log(this); // rozetkaShop
-      console.log(`Shop ${this.name} has product ${product.name} with price ${product.price} and quantity ${product.quantity}`);
+      console.log(
+        `Shop ${this.name} has product ${product.name} with price ${product.price} and quantity ${product.quantity}`
+      );
     });
-  }
+  },
 };
 
 // стрілки не можуть бути конструкторами
 // const test = new arrowFunc(); // TypeError
 
-// у стрілок не має arguments 
+// у стрілок не має arguments
 const haveArguments = function (a, b, c) {
   console.log(arguments); // псевдомасив
-}
+};
 
 const doesntHaveArguments = () => {
   console.log(arguments); // нічого
-}
+};
 
 // залишкові параметри
 const sumOfAnyNumbers = (num1, num2, ...restNumbers) => {
@@ -351,23 +352,31 @@ const sumOfAnyNumbers = (num1, num2, ...restNumbers) => {
 
   // debugger;
 
-  for(let i = 0; i < restNumbers.length; i++) {
+  for (let i = 0; i < restNumbers.length; i++) {
     result += restNumbers[i];
   }
 
   return result;
-}
+};
 
 const sumOfAnyNumbers2 = (...restNumbers) => {
   let result = 0;
 
   // debugger;
 
-  for(let i = 0; i < restNumbers.length; i++) {
+  for (let i = 0; i < restNumbers.length; i++) {
     result += restNumbers[i];
   }
 
   return result;
-}
+};
 
+const numbers = [50, 15, 987, 6546, 879, 879, 645];
+const numbers2 = [-515, -4564, -5654, -65352, -5645];
 
+const allNumbers = [...numbers, 10, ...numbers2];
+
+// const res1 = sumOfAnyNumbers2(numbers[0], numbers[1], numbers[2], numbers[3],..., numbers[6]);
+
+// spread - оператор (оператор розширення) 
+const res2 = sumOfAnyNumbers2(100, 100, ...numbers, ...numbers2);
