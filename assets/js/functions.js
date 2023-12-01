@@ -87,15 +87,15 @@ myFirstFunction(5,2); // NORMAL
 
 console.log(3);
 
-sum2(5,5); // NORMAL
+// sum2(5,5); // NORMAL
 
 // functional declaration - об'ява функції
-function sum2(num1, num2) {
-  debugger;
-  return num1 + num2;
-}
+// function sum2(num1, num2) {
+//   debugger;
+//   return num1 + num2;
+// }
 
-sum2(5,5); // NORMAL
+// sum2(5,5); // NORMAL
 
 // arrow function - функції "стрілки"
 
@@ -198,3 +198,61 @@ if (true) {
 
 console.log(var4); // false
 
+// чисті функції - clear func
+function sum (num1, num2) {
+  return num1 + num2;
+}
+
+function multiply (num1, num2) {
+  return num1 * num2;
+}
+
+function square (num) {
+  return multiply(num, num);
+}
+
+// детерменовані функції - determined func
+function sum (num1, num2) {
+  let result = num1 + num2;
+  console.log(result);
+  return result;
+}
+
+// функції з побічними ефектами - func with side effects
+// let num = 1;
+// function sum (num1, num2) {
+//   let result = num1 + num2 + num++;
+//   console.log(result);
+//   return result;
+// }
+
+// let result;
+
+// function sum2 (num1, num2) {
+//   result = num1 + num2;
+//   return result;
+// }
+
+
+// функції вищого порядку - HOF (High Order Functions)
+//  функція, що приймає як аргументи інші функції або повертає іншу функцію як результат.
+
+function hof1 (func1) {
+  if(Math.random() > 0.5) {
+    func1();
+  }
+}
+
+function hof2 () {
+  const func2 = function () {
+    console.log('boo');
+  }
+
+  return func2;
+}
+
+const innerFunc = hof2();
+
+// innerFunc();
+// innerFunc();
+// innerFunc();
