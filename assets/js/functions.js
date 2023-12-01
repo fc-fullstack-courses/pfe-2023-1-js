@@ -337,3 +337,37 @@ const rozetkaShop = {
 // const test = new arrowFunc(); // TypeError
 
 // у стрілок не має arguments 
+const haveArguments = function (a, b, c) {
+  console.log(arguments); // псевдомасив
+}
+
+const doesntHaveArguments = () => {
+  console.log(arguments); // нічого
+}
+
+// залишкові параметри
+const sumOfAnyNumbers = (num1, num2, ...restNumbers) => {
+  let result = num1 + num2;
+
+  // debugger;
+
+  for(let i = 0; i < restNumbers.length; i++) {
+    result += restNumbers[i];
+  }
+
+  return result;
+}
+
+const sumOfAnyNumbers2 = (...restNumbers) => {
+  let result = 0;
+
+  // debugger;
+
+  for(let i = 0; i < restNumbers.length; i++) {
+    result += restNumbers[i];
+  }
+
+  return result;
+}
+
+
