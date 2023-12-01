@@ -208,7 +208,8 @@ function toRandomCase2(str) {
     //   return letter.toLowerCase();
     // }
 
-    const newLetter = Math.random() > 0.5 ? letter.toUpperCase() : letter.toLowerCase();
+    const newLetter =
+      Math.random() > 0.5 ? letter.toUpperCase() : letter.toLowerCase();
     return newLetter;
   });
 
@@ -228,3 +229,50 @@ function toRandomCase2(str) {
 
   ** Переробити функції вище так, щоб ви могли передати список голосних
 */
+
+function capitaLetter(str) {
+  const wordArr = str.split(' ');
+
+  const newWordArr = wordArr.map(function (word) {
+    return word.charAt(0).toUpperCase() + word.slice(1);
+  });
+  return newWordArr.join(' ');
+}
+
+console.log(capitaLetter('i love java script '));
+
+// function countVowels(text) {
+//   let count = 0;
+//   const vowels = ['a', 'e', 'i', 'o', 'u'];
+
+
+//   const lowerCaseText = text.toLowerCase();
+
+//   const letterText = lowerCaseText.split('');
+//   letterText.forEach(function (letter) {
+//     // t e s t
+//     if (vowels.includes(letter)) {
+//       count++;
+//     }
+//   });
+
+//   return count;
+// }
+
+const vowels = ['a', 'e', 'i', 'o', 'u'];
+
+function countVowels(text, vowels) {
+  let count = 0;
+
+  const lowerCaseText = text.toLowerCase();
+
+  const letterText = lowerCaseText.split('');
+  letterText.forEach(function (letter) {
+    // t e s t
+    if (vowels.includes(letter)) {
+      count++;
+    }
+  });
+  
+  return count;
+}
