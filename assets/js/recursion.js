@@ -49,3 +49,46 @@ const logRange = (min, max) => {
 9
 10
 */
+
+const tree = {
+  value: 1,
+  left : {
+    value: 2,
+    left: {
+      value: 4
+    },
+    right: {
+      value: 5,
+      left: {
+        value: 7
+      },
+      right: {
+        value: 8
+      }
+    }
+  },
+  right: {
+    value: 3,
+    right: {
+      value: 6,
+      left: {
+        value: 9
+      }
+    }
+  }
+}
+
+function reduceTree (treeObj) {
+  // debugger;
+  let total = treeObj.value;
+
+  if(treeObj.left) {
+    total += reduceTree(treeObj.left);
+  }
+
+  if(treeObj.right) {
+    total += reduceTree(treeObj.right);
+  }
+
+  return total;
+}
