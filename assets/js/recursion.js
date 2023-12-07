@@ -52,43 +52,68 @@ const logRange = (min, max) => {
 
 const tree = {
   value: 1,
-  left : {
+  left: {
     value: 2,
     left: {
-      value: 4
+      value: 4,
     },
     right: {
       value: 5,
       left: {
-        value: 7
+        value: 7,
       },
       right: {
-        value: 8
-      }
-    }
+        value: 8,
+      },
+    },
   },
   right: {
     value: 3,
     right: {
       value: 6,
       left: {
-        value: 9
-      }
-    }
-  }
-}
+        value: 9,
+      },
+    },
+  },
+};
 
-function reduceTree (treeObj) {
+function reduceTree(treeObj) {
   // debugger;
   let total = treeObj.value;
 
-  if(treeObj.left) {
+  if (treeObj.left) {
     total += reduceTree(treeObj.left);
   }
 
-  if(treeObj.right) {
+  if (treeObj.right) {
     total += reduceTree(treeObj.right);
   }
 
   return total;
 }
+
+/*
+  зробити рекурсивну функцію зведення числа у ступінь
+    toPower(2,3) -> 8;
+  Не використовувати цикли, **, Math.pow();
+*/
+
+function toPower(number, exp) {
+  if (exp === 0) {
+    return 1;
+  }
+
+  if (exp === 1) {
+    return number;
+  }
+
+  if (exp > 1) {
+    return number * toPower(number, exp - 1);
+  } 
+
+  if(exp < 0) {
+    return 1 / (number * toPower(number, Math.abs(exp) - 1 ));
+  }
+}
+
