@@ -232,7 +232,7 @@ function printUserCallback(user, index, usersArray) {
 // і покажіть кожне число в четвертій ступені
 const nums = [5, 15, -504, 63.5, 10];
 
-function printNumber (number) {
+function printNumber(number) {
   // console.log(number ** 4);
 }
 
@@ -245,15 +245,20 @@ nums.forEach(function (number) {
 
 // map - повертає новий масив з результатами
 // виклику коллбеків для кожного елементу початового масиву
-const newArray = nums.map(function (number) {
-  // console.log(number ** 4);
-  return number ** 4;
-});
+const newArray = nums.map((number) => number ** 4);
 
 // filter - повертає новий масив, який складається з елементів
 // які пройшли перевірку у колбек- функції
 
-const betterUsers = ['Andriy', 'Petro', 'Natalka', 'Olena', 'Anton', 'John', 'Anton'];
+const betterUsers = [
+  'Andriy',
+  'Petro',
+  'Natalka',
+  'Olena',
+  'Anton',
+  'John',
+  'Anton',
+];
 
 const noAntonsAllowed = betterUsers.filter(function callback(name) {
   // if(name !== 'Anton') {
@@ -267,14 +272,14 @@ const noAntonsAllowed = betterUsers.filter(function callback(name) {
   return name !== 'Anton';
 });
 
+const noAntonsAllowed2 = betterUsers.filter((name) => name !== 'Anton');
+
 // some - повертає булеве значення, яке отримує на основі
 // запуску колбеку над елементами. Повертає правду якщо
 // хоч один запуск колбеку повернув правду
-const isAntonInArray = betterUsers.some(function(name) {
-  return name === 'Anton';
-});
+const isAntonInArray = betterUsers.some((name) => name === 'Anton');
 
-const isAntonInArray2 = noAntonsAllowed.some(function(name) {
+const isAntonInArray2 = noAntonsAllowed.some(function (name) {
   return name === 'Anton';
 });
 
@@ -298,7 +303,7 @@ const firstAnton = betterUsers.find(function (name) {
 const firstAnton2 = noAntonsAllowed.find(function (name) {
   return name === 'Anton';
 });
-// findIndex - шукає індекс першого елемента в масиві, 
+// findIndex - шукає індекс першого елемента в масиві,
 // який задовільняє перевірці в колбекі
 const antonIndex1 = betterUsers.findIndex(function (name) {
   return name === 'Anton';
@@ -312,3 +317,18 @@ const antonIndex2 = noAntonsAllowed.findIndex(function (name) {
 const antonIndex3 = betterUsers.indexOf('Anton');
 
 const antonIndex4 = noAntonsAllowed.indexOf('Anton');
+
+const nums3 = [1, 2, 3, 4, 5];
+// непарні числа - множити на 3
+// парні числа - зводити у 5 ступінь
+const nums4 = nums3.map((number) => {
+  if (number % 2 === 0) {
+    // парне
+    return number ** 5;
+  } else {
+    // непарне
+    return number * 3;
+  }
+});
+
+const nums5 = nums3.map((num) => (num % 2 === 0 ? num ** 5 : num * 3));
