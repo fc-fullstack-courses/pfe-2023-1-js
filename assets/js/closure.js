@@ -90,16 +90,23 @@ const obj = createCounter();
   multiply(10); // 60 * 10 = 600
 */
 
-// function createMultiplier (x) {
-//   let total = x;
+function createMultiplier (x) {
+  if(typeof x !== "number" || isNaN(x)) {
+    throw new TypeError('Y must be number');
+  }
+  
+  let total = x;
 
-//   function multiply (y) {
-//     return total *= y;
-//   }
+  function multiply (y) {
+    if(typeof y !== "number" || isNaN(y)) {
+      throw new TypeError('Y must be number');
+    }
+    return total *= y;
+  }
 
-//   return multiply;
-// }
+  return multiply;
+}
 
-const createMultiplier = (x) => (y) => (x *= y);
+// const createMultiplier = (x) => (y) => (x *= y);
 
 const otherMultiply = createMultiplier(2);
