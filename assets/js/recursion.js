@@ -118,6 +118,22 @@ function toPower(number, exp) {
 }
 
 /*
-  зробіть рекурсивну функцію знаходження факрторіалу числа
+  зробіть рекурсивну функцію знаходження факторіалу числа
+  !0 = 1
   !4 = 1 * 2 * 3 * 4 = 24
+  !5 = 1 * 2 * 3 * 4 * 5 = 120
+  !6 = 1 * 2 * 3 * 4 * 5 * 6 = 720
 */
+
+function getFactorial (num) {
+  debugger;
+  if (num < 0) {
+    throw RangeError('Number must not be negative');
+  }
+
+  if (num === 0) {
+    return 1;
+  }
+
+  return num * getFactorial(num - 1);
+}
