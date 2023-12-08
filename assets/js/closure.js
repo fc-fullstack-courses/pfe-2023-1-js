@@ -56,22 +56,50 @@ counter(); -> 3
 // const increment1 = createCounter();
 // const increment2 = createCounter();
 
-
 function createCounter() {
   let i = 0;
 
   const increment = function () {
     return ++i;
-  }
+  };
 
   const decrement = function () {
     return --i;
-  }
+  };
 
   return {
     increment,
-    decrement
-  }
+    decrement,
+  };
 }
 
 const obj = createCounter();
+
+/*
+  створити функцію createMultiplier
+  вона має приймати число X
+  і повертати іншу функцію
+
+  повернена функція має отримувати якесь інше число Y 
+  і множити його на X та усі попередні значення Y
+
+  const multiply = createMultiplier(2);
+
+  multiply(5); // 2 * 5 = 10
+  multiply(6); // 10 * 6  = 60
+  multiply(10); // 60 * 10 = 600
+*/
+
+// function createMultiplier (x) {
+//   let total = x;
+
+//   function multiply (y) {
+//     return total *= y;
+//   }
+
+//   return multiply;
+// }
+
+const createMultiplier = (x) => (y) => (x *= y);
+
+const otherMultiply = createMultiplier(2);
