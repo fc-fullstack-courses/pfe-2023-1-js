@@ -117,15 +117,70 @@ class User {
 */
 
 class Product {
-  constructor(name, price, quantity, isForAdult) {
+  constructor(name, price, quantity, isForAdult = false) {
+
+    if(typeof name !== 'string' || name === '') {
+      throw new TypeError ('Назва має бути не пустим рядком');
+    }
+
+    // if(typeof price !== 'number' || isNaN(price)) {
+    //   throw new TypeError ('Ціна має бути числом')
+    // }
+
+    // if(price < 0) {
+    //   throw new RangeError('Ціна не може бути негативною');
+    // }
+
     this.name = name;
+    // узгодження що напряму таку властивість чіпати не треба
+    // this._price = price;
+
+    // це сеттер зараз
     this.price = price;
+
     this.quantity = quantity;
     this.isForAdult = isForAdult;
   }
 
+  // безпечно отримуємо ціну
+  // getPrice () {
+  //   return this._price;
+  // }
+
+  // геттер - штучний замінник отримання певної властивості
+  get price () {
+    return this._price;
+  }
+
+  // безпечно змінюємо ціну
+  // setPrice (newPrice) {
+
+  //   if(typeof newPrice !== 'number' || isNaN(newPrice)) {
+  //     throw new TypeError ('Ціна має бути числом')
+  //   }
+
+  //   if(newPrice < 0) {
+  //     throw new RangeError('Ціна не може бути негативною');
+  //   }
+
+  //   this._price = newPrice;
+  // }
+
+  // сеттер - штучний замінник задавання певної властивості
+  set price (newPrice) {
+    if(typeof newPrice !== 'number' || isNaN(newPrice)) {
+      throw new TypeError ('Ціна має бути числом')
+    }
+
+    if(newPrice < 0) {
+      throw new RangeError('Ціна не може бути негативною');
+    }
+
+    this._price = newPrice;
+  }
+
   getTotalPrice() {
-    return this.price * this.quantity;
+    return this._price * this.quantity;
   }
 }
 
@@ -148,3 +203,9 @@ me.money = 1000;
 // const words = str.split(' ');
 
 // const totalPrice = +words[words.length - 1];
+
+const prod2 = new Product('Original name 1', 137.99, 2000);
+
+// prod2.price = undefined;
+
+// console.log(prod2.getTotalPrice());
