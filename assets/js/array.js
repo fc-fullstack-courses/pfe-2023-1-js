@@ -347,3 +347,36 @@ const result = nums6.reduce((acc, num, index, arr) => (acc += num));
   (+, -, * , /)
   результати розрахувати за допомогою методу масиву reduce
 */
+
+function createCalc(operator = '+') {
+  return function (...numbers) {
+    // if (operator === '+') {
+    //   const sum = numbers.reduce((acc, number) => (acc += number));
+    //   return sum;
+    // } else if (operator === '-') {
+    //   const minus = numbers.reduce((acc, number) => (acc -= number));
+    //   return minus;
+    // } else if (operator === '*') {
+    //   return numbers.reduce((acc, number) => (acc *= number));
+    // } else if (operator === '/') {
+    //   return numbers.reduce((acc, number) => (acc /= number));
+    // }
+
+    return numbers.reduce((acc, num) => {
+      if (operator === '+') {
+        return (acc += num);
+      } else if (operator === '-') {
+        return (acc -= num);
+      } else if (operator === '*') {
+        return (acc *= num);
+      } else if (operator === '/') {
+        return (acc /= number);
+      }
+    });
+  };
+}
+
+const sum = createCalc('+');
+const subtract = createCalc('-');
+const multiply = createCalc('*');
+const divide = createCalc('/');
