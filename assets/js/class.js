@@ -100,8 +100,51 @@ class User {
     } m gender: ${this.isMale ? 'male' : 'female'}`;
   }
 
-  isAdult () {
+  isAdult() {
     return this.age >= 18;
   }
 }
 
+/*
+  створити клас Product
+    у товара має бути
+      назва
+      ціна
+      кількість (на складі)
+      чи товар для дорослих
+
+      має бути метод, який поверне вам вартість всього товару на складі
+*/
+
+class Product {
+  constructor(name, price, quantity, isForAdult) {
+    this.name = name;
+    this.price = price;
+    this.quantity = quantity;
+    this.isForAdult = isForAdult;
+  }
+
+  getTotalPrice() {
+    return this.price * this.quantity;
+  }
+}
+
+const prod1 = new Product('Живчик', 36.5, 500, false);
+
+const me = new User('Kyrylo', 'Prepodenko', 15000, true, 1);
+
+me.money = 1000;
+
+// if (me.money >= prod1.getTotalPrice()) {
+//   alert('можу купити весь живчик');
+// } else {
+//   alert('не можу купити весь живчик');
+// }
+
+// alert(`Купити весь живчик коштує ${prod1.getTotalPrice()}`);
+
+// let str = `Купити весь живчик коштує ${prod1.getTotalPrice()}`;
+
+// const words = str.split(' ');
+
+// const totalPrice = +words[words.length - 1];
