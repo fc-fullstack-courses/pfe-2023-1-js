@@ -5,6 +5,7 @@ class User {
     this.login = login;
     this.password = password;
     this.email = email;
+    this.isBanned = false;
   }
 
   createPost(text) {
@@ -49,4 +50,31 @@ class Moderator extends User {
   }
 }
 
+/*
+  створити клас Admin
+    адмін має мати можливість банити користувачів
+
+    у кожного користувача має бути властивість isBanned
+
+*/
+
+class Admin extends Moderator {
+  constructor(login, password, email, permissions) {
+    super(login, password, email, permissions);
+  }
+
+  ban(user) {
+    user.isBanned = true;
+
+    return user;
+  }
+
+  // unBan(user) {
+  //   user.isBanned = false;
+  //   return user;
+  // }
+}
+
 const moder1 = new Moderator('moder1', '12345moder', 'moder@gmail.com', []);
+
+const admin = new Admin('tyran12345', 'admin', 'admin1@gmail.com', []);
