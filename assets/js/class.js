@@ -201,8 +201,14 @@ class Product {
     this.#price = newPrice;
   }
 
+  // приватний метод
+  #secret() {
+    console.log('private method');
+  }
+
   getTotalPrice() {
     // console.log(this.#private); // value
+    this.#secret();
     return this.#price * this.quantity;
   }
 }
@@ -234,3 +240,5 @@ const prod2 = new Product('Original name 1', 137.99, 2000);
 // console.log(prod2.getTotalPrice());
 
 // console.log(prod2.#private); // ERROR 
+
+// prod2.#secret(); // ERROR
