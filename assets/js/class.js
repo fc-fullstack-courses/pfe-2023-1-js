@@ -85,25 +85,25 @@ const house1 = new House(3, 'Somwhere is Zaporizhzhia');
 
 */
 
-class User {
-  constructor(firstName, lastName, age, isMale, height) {
-    this.firstName = firstName;
-    this.lastName = lastName;
-    this.age = age;
-    this.isMale = isMale;
-    this.height = height;
-  }
+// class User {
+//   constructor(firstName, lastName, age, isMale, height) {
+//     this.firstName = firstName;
+//     this.lastName = lastName;
+//     this.age = age;
+//     this.isMale = isMale;
+//     this.height = height;
+//   }
 
-  getAllUserData() {
-    `User ${this.firstName} ${this.lastName} age: ${this.age} height: ${
-      this.height
-    } m gender: ${this.isMale ? 'male' : 'female'}`;
-  }
+//   getAllUserData() {
+//     `User ${this.firstName} ${this.lastName} age: ${this.age} height: ${
+//       this.height
+//     } m gender: ${this.isMale ? 'male' : 'female'}`;
+//   }
 
-  isAdult() {
-    return this.age >= 18;
-  }
-}
+//   isAdult() {
+//     return this.age >= 18;
+//   }
+// }
 
 /*
   створити клас Product
