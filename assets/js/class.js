@@ -211,7 +211,21 @@ class Product {
     this.#secret();
     return this.#price * this.quantity;
   }
+
+  // статичний метод / властивість - метод або властівість які зберігаються у конструктора 
+  // а не у конкретних екземплярів об'єктів
+  static test2  = 'static property';
+
+  static test3 () {
+    console.log('static method');
+  }
+
+  static isProduct (obj) {
+    return obj instanceof Product;
+  }
 }
+
+// Product.test1 = 'static property';
 
 const prod1 = new Product('Живчик', 36.5, 500, false);
 
