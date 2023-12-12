@@ -120,6 +120,7 @@ class Product {
   // створення приватного поля / властивості
   #private;
   #price;
+  #quantity;
   constructor(name, price, quantity, isForAdult = false) {
 
     // console.log(this.#private); // value
@@ -145,6 +146,22 @@ class Product {
 
     this.quantity = quantity;
     this.isForAdult = isForAdult;
+  }
+
+  get quantity () {
+    return this.#quantity;
+  }
+
+  set quantity (newQuantity) {
+    if(typeof newQuantity !== 'number' || isNaN(newQuantity)) {
+      throw new TypeError ('Кількість має бути числом');
+    }
+
+    if(newQuantity < 0) {
+      throw new RangeError('Кількість не може бути негативною');
+    }
+
+    this.#quantity = newQuantity;
   }
 
   // безпечно отримуємо ціну
