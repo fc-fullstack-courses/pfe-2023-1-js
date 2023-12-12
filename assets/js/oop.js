@@ -9,6 +9,10 @@ class User {
   }
 
   createPost(text) {
+    // if(this.isBanned) {
+    //   throw new Error('Banned user cant post');
+    // }
+
     const newPost = new Post(text);
   }
 
@@ -78,3 +82,12 @@ class Admin extends Moderator {
 const moder1 = new Moderator('moder1', '12345moder', 'moder@gmail.com', []);
 
 const admin = new Admin('tyran12345', 'admin', 'admin1@gmail.com', []);
+
+// абстракція - виділення найважливіших частин реалізації
+
+// class Product {
+//   // товар магазину
+//   constructor(name, price, quantity, weight, height, width) {
+
+//   }
+// }
