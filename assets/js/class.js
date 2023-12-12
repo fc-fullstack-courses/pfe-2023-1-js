@@ -117,7 +117,12 @@ class User {
 */
 
 class Product {
+  // створення приватного поля / властивості
+  #private;
+  #price;
   constructor(name, price, quantity, isForAdult = false) {
+
+    // console.log(this.#private); // value
 
     if(typeof name !== 'string' || name === '') {
       throw new TypeError ('Назва має бути не пустим рядком');
@@ -149,7 +154,7 @@ class Product {
 
   // геттер - штучний замінник отримання певної властивості
   get price () {
-    return this._price;
+    return this.#price;
   }
 
   // безпечно змінюємо ціну
@@ -176,11 +181,12 @@ class Product {
       throw new RangeError('Ціна не може бути негативною');
     }
 
-    this._price = newPrice;
+    this.#price = newPrice;
   }
 
   getTotalPrice() {
-    return this._price * this.quantity;
+    // console.log(this.#private); // value
+    return this.#price * this.quantity;
   }
 }
 
@@ -209,3 +215,5 @@ const prod2 = new Product('Original name 1', 137.99, 2000);
 // prod2.price = undefined;
 
 // console.log(prod2.getTotalPrice());
+
+// console.log(prod2.#private); // ERROR 
