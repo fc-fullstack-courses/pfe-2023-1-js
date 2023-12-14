@@ -240,3 +240,62 @@ function getFigureArea (figureObj) {
 
   throw new TypeError('Not a figure');
 }
+
+/*
+  створити клас Animal
+    кожна тварика має ім'я та тип (назва виду (кіт, пес...))
+    кожна тварина має вміти рухатись і "розмовляти" (ретюрнів рядків вистачіть)
+
+  Успадкувати від тварини класи Snake (змія) і Eagle (орел)
+    і орли і змії мають рухатися і "розмовляти" по своєму
+
+  slither
+*/
+
+class Animal {
+  constructor (species, nickname) {
+    this.species = species;
+    this.nickname = nickname;
+  }
+
+  move () {
+    return `${this.nickname} is moving`;
+  }
+
+  speak () {
+    return `${this.nickname} is making noices`;
+  }
+}
+
+const animal1 = new Animal('cat', 'Pushok');
+
+class Snake extends Animal {
+  constructor (nickname) {
+    super('snake', nickname);
+  }
+
+  move () {
+    return `${this.nickname} is slithering`;
+  }
+
+  speak () {
+    return `${this.nickname} is hissing`;
+  }
+}
+
+class Eagle extends Animal {
+  constructor (nickname) {
+    super('eagle', nickname);
+  }
+
+  move () {
+    return `${this.nickname} is flying`;
+  }
+
+  speak () {
+    return `${this.nickname} is skreeching`;
+  }
+}
+
+const snake = new Snake('Baslilisk');
+const eagle = new Eagle('Baldie');
