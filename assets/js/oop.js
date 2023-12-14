@@ -147,3 +147,37 @@ const shark1 = new Shark('White', true);
 //   }
 // }
 
+// інкапсуляція - приховання даних / методів для приховування складності реалізації
+
+class ElectronicDevice {
+  #isOn;
+  constructor (name) {
+    this.name = name;
+    this.isOn = false;
+  }
+
+  // індикатор
+  get isOn () {
+    return this.#isOn;
+  }
+
+  set isOn (newState) {
+    if (typeof newState !== 'boolean') {
+      throw new TypeError();
+    }
+
+    this.#isOn = newState;
+  }
+
+  // кнопка ввімкнення
+  startDevice () {  
+    this.isOn = true;
+  }
+
+  stopDevice () {
+    this.isOn = false;
+  }
+  
+}
+
+const device1 = new ElectronicDevice('raspberry PI');
