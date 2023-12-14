@@ -181,3 +181,62 @@ class ElectronicDevice {
 }
 
 const device1 = new ElectronicDevice('raspberry PI');
+
+// поліморфізм - можливість методів успадкованих класів по різному працювати 
+// у порівнянні з бітьківськими методами
+
+class Figure {
+  constructor (name) {
+    this.name = name;
+  }
+
+  getArea () {
+    console.log('розрахунок площі фігури')
+  }
+
+  static isFigure (fig) {
+    return fig instanceof Figure;
+  }
+}
+
+const fig1 = new Figure ('щось страшне');
+
+class Rectangle extends Figure {
+  constructor (a, b, name = 'прямокутник') {
+    super(name);
+    this.a = a;
+    this.b = b;
+  }
+
+  getArea () {
+    console.log('розрахунок площі прямокутника');
+    return this.a * this.b;
+  }
+}
+
+const rect1 = new Rectangle(5,10);
+
+class Square extends Rectangle {
+  constructor (a) {
+    super(a,a, 'квадрат');
+
+    delete this.b;
+  }
+
+  getArea () {
+    console.log('розрахунок площі квадрата');
+    return this.a * this.a;
+  }
+}
+
+const square1 = new Square(7);
+
+function getFigureArea (figureObj) {
+  if(Figure.isFigure(figureObj)) {
+    const res = figureObj.getArea();
+
+    return res;
+  }
+
+  throw new TypeError('Not a figure');
+}
