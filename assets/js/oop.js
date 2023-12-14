@@ -133,10 +133,8 @@ class Shark extends Fish {
   }
 }
 
-
 const fish1 = new Fish('Nemo', 'herbivore', true);
 const shark1 = new Shark('White', true);
-
 
 // абстракція - виділення найважливіших частин реалізації
 
@@ -151,17 +149,17 @@ const shark1 = new Shark('White', true);
 
 class ElectronicDevice {
   #isOn;
-  constructor (name) {
+  constructor(name) {
     this.name = name;
     this.isOn = false;
   }
 
   // індикатор
-  get isOn () {
+  get isOn() {
     return this.#isOn;
   }
 
-  set isOn (newState) {
+  set isOn(newState) {
     if (typeof newState !== 'boolean') {
       throw new TypeError();
     }
@@ -170,60 +168,59 @@ class ElectronicDevice {
   }
 
   // кнопка ввімкнення
-  startDevice () {  
+  startDevice() {
     this.isOn = true;
   }
 
-  stopDevice () {
+  stopDevice() {
     this.isOn = false;
   }
-  
 }
 
 const device1 = new ElectronicDevice('raspberry PI');
 
-// поліморфізм - можливість методів успадкованих класів по різному працювати 
+// поліморфізм - можливість методів успадкованих класів по різному працювати
 // у порівнянні з бітьківськими методами
 
 class Figure {
-  constructor (name) {
+  constructor(name) {
     this.name = name;
   }
 
-  getArea () {
-    console.log('розрахунок площі фігури')
+  getArea() {
+    console.log('розрахунок площі фігури');
   }
 
-  static isFigure (fig) {
+  static isFigure(fig) {
     return fig instanceof Figure;
   }
 }
 
-const fig1 = new Figure ('щось страшне');
+const fig1 = new Figure('щось страшне');
 
 class Rectangle extends Figure {
-  constructor (a, b, name = 'прямокутник') {
+  constructor(a, b, name = 'прямокутник') {
     super(name);
     this.a = a;
     this.b = b;
   }
 
-  getArea () {
+  getArea() {
     console.log('розрахунок площі прямокутника');
     return this.a * this.b;
   }
 }
 
-const rect1 = new Rectangle(5,10);
+const rect1 = new Rectangle(5, 10);
 
 class Square extends Rectangle {
-  constructor (a) {
-    super(a,a, 'квадрат');
+  constructor(a) {
+    super(a, a, 'квадрат');
 
     delete this.b;
   }
 
-  getArea () {
+  getArea() {
     console.log('розрахунок площі квадрата');
     return this.a * this.a;
   }
@@ -231,8 +228,8 @@ class Square extends Rectangle {
 
 const square1 = new Square(7);
 
-function getFigureArea (figureObj) {
-  if(Figure.isFigure(figureObj)) {
+function getFigureArea(figureObj) {
+  if (Figure.isFigure(figureObj)) {
     const res = figureObj.getArea();
 
     return res;
@@ -252,50 +249,156 @@ function getFigureArea (figureObj) {
   slither
 */
 
+// class Animal {
+//   constructor(species, nickname) {
+//     this.species = species;
+//     this.nickname = nickname;
+//   }
+
+//   move() {
+//     return `${this.nickname} is moving`;
+//   }
+
+//   speak() {
+//     return `${this.nickname} is making noices`;
+//   }
+// }
+
+// const animal1 = new Animal('cat', 'Pushok');
+
+// class Snake extends Animal {
+//   constructor(nickname) {
+//     super('snake', nickname);
+//   }
+
+//   move() {
+//     return `${this.nickname} is slithering`;
+//   }
+
+//   speak() {
+//     return `${this.nickname} is hissing`;
+//   }
+// }
+
+// class Eagle extends Animal {
+//   constructor(nickname) {
+//     super('eagle', nickname);
+//   }
+
+//   move() {
+//     return `${this.nickname} is flying`;
+//   }
+
+//   speak() {
+//     return `${this.nickname} is skreeching`;
+//   }
+// }
+
+// const snake = new Snake('Baslilisk');
+// const eagle = new Eagle('Baldie');
+
+/*
+    SOLID
+
+    Single-responsibility principle - принцип єдиної відповідальності
+    Open-closed principle - принцип відкритості / закритості
+    Liskov substitution principle - "правильне успадкування". 
+    Interface segregation principle - принцип розділів інтерфейсу
+    Dependency inversion principle - принцип інверсії залежностей
+*/
+
+// Single-responsibility principle - принцип єдиної відповідальності
+function sum(...numbers) {
+  // console.log('user created');
+  return numbers.reduce((acc, num) => (acc += num));
+}
+
+function isNormalNumber(num) {
+  if (typeof num !== 'number' || isNaN(num)) {
+    throw new TypeError('num must be number');
+  }
+}
+
+isNormalNumber(5);
+
+// Open-closed principle - принцип відкритості / закритості
+function calcLetters(str, letters = ['1', '2', '3', '4', '5', '6']) {
+  const lowerCasedStr = str.toLowerCase();
+
+  let result = 0;
+
+  for (let i = 0; i < lowerCasedStr.length; i++) {
+    let letter = lowerCasedStr[i];
+    if (letters.includes(letter)) {
+      result++;
+    }
+  }
+
+  return result;
+}
+
+// Liskov substitution principle - маэте зробити так, щоб на місце екземпляру дочірного класу можна
+// було підставити еказмпаля батьківського класу без проблем з виконанням коду.
+
 class Animal {
-  constructor (species, nickname) {
+  constructor(species, nickname) {
     this.species = species;
     this.nickname = nickname;
   }
 
-  move () {
+  move() {
     return `${this.nickname} is moving`;
   }
 
-  speak () {
+  speak() {
     return `${this.nickname} is making noices`;
   }
 }
 
-const animal1 = new Animal('cat', 'Pushok');
-
 class Snake extends Animal {
-  constructor (nickname) {
+  constructor(nickname) {
     super('snake', nickname);
   }
 
-  move () {
+  #slither () {
     return `${this.nickname} is slithering`;
   }
 
-  speak () {
+  move() {
+    return this.#slither();
+  }
+
+  speak() {
     return `${this.nickname} is hissing`;
   }
 }
 
 class Eagle extends Animal {
-  constructor (nickname) {
+  constructor(nickname) {
     super('eagle', nickname);
   }
 
-  move () {
+  move() {
     return `${this.nickname} is flying`;
   }
 
-  speak () {
+  speak() {
     return `${this.nickname} is skreeching`;
   }
 }
 
+const animal1 = new Animal('cat', 'Pushok');
 const snake = new Snake('Baslilisk');
 const eagle = new Eagle('Baldie');
+
+const tamer = {
+  name: 'John',
+  trainMoving: function (animal) {
+    return animal.move();
+  },
+};
+
+//Interface segregation principle - створюйте методи та власитівості тількі тоді коли це потрібно
+// щоб не успадкувати зайві речі (змія не вміє літати)
+
+// Dependency inversion principle - не залежити від деталей реалізації (не допускати хардкода)
