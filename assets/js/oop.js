@@ -83,15 +83,6 @@ const moder1 = new Moderator('moder1', '12345moder', 'moder@gmail.com', []);
 
 const admin = new Admin('tyran12345', 'admin', 'admin1@gmail.com', []);
 
-// абстракція - виділення найважливіших частин реалізації
-
-// class Product {
-//   // товар магазину
-//   constructor(name, price, quantity, weight, height, width) {
-
-//   }
-// }
-
 /*
   створити клас Риби
     у риба має бути ім'я (прізвисько)
@@ -106,3 +97,53 @@ const admin = new Admin('tyran12345', 'admin', 'admin1@gmail.com', []);
     вважайте що акула може полювати тількі на риб
 
 */
+
+class Fish {
+  constructor(nickname, ration, isAlive) {
+    this.nickname = nickname;
+    this.ration = ration;
+    this.isAlive = isAlive;
+  }
+
+  swim() {
+    console.log(`${this.nickname} is swimming`);
+  }
+
+  static isFish(fish) {
+    return fish instanceof Fish;
+  }
+}
+
+class Shark extends Fish {
+  constructor(nickname, isAlive) {
+    super(nickname, 'carnivore', isAlive); //  new Fish();
+  }
+
+  hunt(fish) {
+    if (!Fish.isFish(fish)) {
+      throw new TypeError('Акула має їсти тільки рибу');
+    }
+
+    fish.isAlive = false;
+    console.log(`${this.nickname} has eaten ${fish.nickname}`);
+  }
+
+  static isShark(shark) {
+    return shark instanceof Shark;
+  }
+}
+
+
+const fish1 = new Fish('Nemo', 'herbivore', true);
+const shark1 = new Shark('White', true);
+
+
+// абстракція - виділення найважливіших частин реалізації
+
+// class Product {
+//   // товар магазину
+//   constructor(name, price, quantity, weight, height, width) {
+
+//   }
+// }
+
