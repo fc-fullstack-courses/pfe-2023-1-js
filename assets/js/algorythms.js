@@ -109,3 +109,38 @@ function bubbleSort(array) {
 
 
 bubbleSort([5, 2, 3, 4, 1]);
+
+// O(log n) - логарифмічна складність
+
+const sortedArr = [1,2,5,8,12,20,35,50,125,512];
+
+function binarySearch (arr, value) {
+  debugger;
+  /*
+    знайти початковий, кінцевий та середній індекс ВІДСОРТОВАНОГО масиву
+    поки не знайдемо число пробуємо наступне:
+      порівнюємо середній елемент масиву з value
+        якщо співпадає
+        якщо ні то відкидаємо половину масиву і змінюємо початок / кінець і середину
+  */
+  let start = 0;
+  let end = arr.length - 1;
+
+  let middle = Math.round((start + end) / 2);
+
+  while(true) {
+    if(arr[middle] === value) {
+      return middle;
+    }
+
+    if(arr[middle] > value) {
+      end = middle;
+      middle = Math.floor((start + end) / 2);
+    }
+
+    if(arr[middle] < value) {
+      start = middle;
+      middle = Math.ceil((start + end) / 2);
+    }
+  }
+}
