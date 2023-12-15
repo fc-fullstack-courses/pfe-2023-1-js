@@ -360,7 +360,7 @@ class Snake extends Animal {
     super('snake', nickname);
   }
 
-  #slither () {
+  #slither() {
     return `${this.nickname} is slithering`;
   }
 
@@ -402,3 +402,43 @@ const tamer = {
 // щоб не успадкувати зайві речі (змія не вміє літати)
 
 // Dependency inversion principle - не залежити від деталей реалізації (не допускати хардкода)
+
+// Don't repeat yourself (DRY) - уникайте написання коду який працює однаково але відрізняється
+// вхідними даними
+// Keep it simple stupid KISS - краще написати код, який буде зрозуміліший усім ніж якось
+// таким чином що потім ніхно не розуміє як це працює
+
+function toRandomCase(str) {
+  const lettersArr = str.split('');
+
+  const newLettersArr = lettersArr.map(function (letter) {
+    // if(Math.random() > 0.5) {
+    //   return letter.toUpperCase();
+    // } else {
+    //   return letter.toLowerCase();
+    // }
+
+    const newLetter =
+      Math.random() > 0.5 ? letter.toUpperCase() : letter.toLowerCase();
+    return newLetter;
+  });
+
+  const resultStr = newLettersArr.join('');
+  return resultStr;
+}
+
+const toRandomCase2 = (str) =>
+  str
+    .split('')
+    .map((letter) =>
+      Math.random() > 0.5 ? letter.toUpperCase() : letter.toLowerCase()
+    )
+    .join('');
+
+// const toRandomCase2 = (str) =>
+//   str
+//     .split('')
+//     .map((letter) =>
+//       Math.random() > 0.5 ? letter.toUpperCase() : letter.toLowerCase()
+//     )
+//     .join('');
