@@ -46,3 +46,28 @@ for(let i = 1; i <= 10; i++) {
 
   y = x^2 + x -> O(n^2 + n) -> O(n^2)
 */
+
+// O(n) - лінійна складність
+
+const nums1 = [1,5,-10,7,863];
+
+
+function linearSearch (arr, value) {
+  /*
+    пройти по масиву циклом
+    порівняти кожен елемент з value
+    якщо збігається то повертаємо індекс цього елементу
+    якщо в масіви такого елементу не було повертаємо -1
+  */
+  for(let i = 0; i < arr.length; i++) {
+    if(arr[i] === value) {
+      return i;
+    }
+  }
+
+  return -1;
+}
+
+linearSearch(nums1, 5); // 1
+linearSearch(nums1, 7); // 3
+linearSearch(nums1, 500); // -1
