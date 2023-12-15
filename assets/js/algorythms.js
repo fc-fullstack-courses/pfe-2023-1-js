@@ -7,9 +7,9 @@
   зробити цикл який буде поступово збільшувати число до 10
   у тілі циклу показувати поточне значення змінної
 */
-for(let i = 1; i <= 10; i++) {
-  console.log(i);
-}
+// for(let i = 1; i <= 10; i++) {
+//   console.log(i);
+// }
 
 // швидкість алгоритму вімірюватимемо в операціях (вхідних даних)
 /*
@@ -71,3 +71,7 @@ function linearSearch (arr, value) {
 linearSearch(nums1, 5); // 1
 linearSearch(nums1, 7); // 3
 linearSearch(nums1, 500); // -1
+
+// O(1) - константна складність
+const strs1 = ['test', 'text', 'str', 'asdsd'];
+// console.log(strs1[2]); // str
