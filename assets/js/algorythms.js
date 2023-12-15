@@ -49,18 +49,17 @@
 
 // O(n) - лінійна складність
 
-const nums1 = [1,5,-10,7,863];
+const nums1 = [1, 5, -10, 7, 863];
 
-
-function linearSearch (arr, value) {
+function linearSearch(arr, value) {
   /*
     пройти по масиву циклом
     порівняти кожен елемент з value
     якщо збігається то повертаємо індекс цього елементу
     якщо в масіви такого елементу не було повертаємо -1
   */
-  for(let i = 0; i < arr.length; i++) {
-    if(arr[i] === value) {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === value) {
       return i;
     }
   }
@@ -75,3 +74,38 @@ linearSearch(nums1, 500); // -1
 // O(1) - константна складність
 const strs1 = ['test', 'text', 'str', 'asdsd'];
 // console.log(strs1[2]); // str
+
+// O(n^2) - квадратична складність
+function bubbleSort(array) {
+  /*
+    проходимося по масиву і порівнюємо 2 значення
+    якщо 1 значення більше ніж 2 то міняємо їх місяціми у масиві
+    повторюємо ці дії поки масив не буде повністю відсортованим (по зростанню)
+  */
+ // зовнішній цикл запускається n разів
+  for (let i = 0; i < array.length; i++) {
+    // внутрішній цикл запускається n * n разів
+    for (let j = 1; j < array.length; j++) {
+      let value1 = array[j - 1];
+      let value2 = array[j];
+
+      if (value1 > value2) {
+        array[j - 1] = value2;
+        array[j] = value1;
+      }
+
+      // for(let n = 0 ; n < array.length;n++) {
+      //   // ... O(n^3)
+      // }
+    }
+  }
+
+  // for(let i = 0; i < array.length; i++) {
+  //  O(n+n) -> O (2n) -> O(n) 
+  // }
+
+  return array;
+}
+
+
+bubbleSort([5, 2, 3, 4, 1]);
