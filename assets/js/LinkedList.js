@@ -125,6 +125,18 @@ class LinkedList {
 			збільшужмо довжину списку
 			повертаємо довжину списку
     */
+    const newNode = new ListNode(data);
+
+    if(this.length === 0) {
+      this.head = newNode;
+      this.tail = newNode;
+    } else {
+      newNode.next = this.head;
+      this.head.prev = newNode;
+      this.head = newNode;
+    }
+
+    return ++this.length;
   }
 
   // видалення першого елементу списку
@@ -138,6 +150,18 @@ class LinkedList {
         зменшуємо довжину
 			повертаємо видалений елемент
     */
+    if(this.length === 0) {
+      return undefined;
+    }
+
+    const firstNode = this.head;
+    const newFirstNode = this.head.next;
+
+    newFirstNode.prev = null;
+    this.head = newFirstNode;
+    this.length--;
+
+    return firstNode;
   }
 }
 
