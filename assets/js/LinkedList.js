@@ -170,3 +170,37 @@ const list1 = new LinkedList();
 list1.push('first');
 // list1.push('second');
 // list1.push('last');
+
+// Symbol - унікальний незмінний тип даних. Використовується в об'єктах, не можна створювати через new
+
+const sym1 = Symbol('cat');
+const sym2 = Symbol('cat');
+
+// const objSymb = new Symbol(); // ERROR
+
+console.log(sym1 === sym2); // false
+console.log(sym1 === sym1); // true
+
+const obj = {
+  test: 'property 1',
+  text: 'secret'
+};
+
+const symbolKey = Symbol('key in object');
+
+// obj.symbolKey = 'prop 2';
+
+// вставка символа ключаем після створення об'єкта
+obj[symbolKey] = 'prop 2';
+
+const obj2 = {
+  [symbolKey]: 'prop2',
+  [Symbol('find me if you can')]: 'secret'
+}
+
+
+console.log(obj[symbolKey]);
+
+// Object.getOwnPropertySymbols приймає об'єкт з символами
+// повератє масив елементами якого є ці символи
+const symbolsInObj2 = Object.getOwnPropertySymbols(obj2);
