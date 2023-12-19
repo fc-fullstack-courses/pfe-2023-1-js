@@ -204,3 +204,26 @@ console.log(obj[symbolKey]);
 // Object.getOwnPropertySymbols приймає об'єкт з символами
 // повератє масив елементами якого є ці символи
 const symbolsInObj2 = Object.getOwnPropertySymbols(obj2);
+
+
+// iterator
+
+// iterables - об'єкти / діні у яких є ітератор
+/*
+  є у:
+    массивів
+    рядок
+    Map (не метод масиву!)
+    Set 
+    arguments
+    ...
+*/
+const arr = [50,5,false];
+
+// отримаємо екземпляр ітреатора масиву
+// це об'єкт з методом next який повертає об'єкт
+// з 2 властивостями
+// done - чи закінчився обхід
+// value - поточний елемент
+const iter = arr[Symbol.iterator]();
+const iter2 = arr[Symbol.iterator]();
