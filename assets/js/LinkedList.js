@@ -227,3 +227,55 @@ const arr = [50,5,false];
 // value - поточний елемент
 const iter = arr[Symbol.iterator]();
 const iter2 = arr[Symbol.iterator]();
+/*
+  1 допомогає в роботі спред оператору
+  2 ітератори використовуються JS для спеціальних циклів
+  3 допомогає з деструктуризацією (трошки пізніше про це)
+*/
+
+// спред оператор
+console.log(...arr);
+
+const notArr = {
+  0: 'first',
+  1: 'second',
+  2: 'third',
+  lenght: 3,
+  [Symbol()]: 'secret'
+}
+
+// console.log(...notArr); // ERROR
+
+// цикли
+
+// for ... in - дозволяє ходити по властивостям об'єктів повертає їх ключі
+for(const key in notArr) {
+  console.log(key); // ключі об'єкта
+  console.log(notArr[key]);
+}
+console.log('===ARR===')
+for(const key in arr) {
+  console.log(key); // ключі об'єкта
+  console.log(arr[key]);
+}
+console.log('====for ... of====')
+// for ... of - цикл на ітераторах
+for(const elem of arr) {
+  console.log(elem);
+  if(elem === 50) {
+    break;
+  }
+}
+
+for(let i = 0; i < arr.length;i++) {
+  console.log(arr[i]);
+  if(arr[i] === 50) {
+    break;
+  }
+}
+
+// ERROR
+// for(const elem of notArr) {
+//   console.log(elem);
+// }
+
