@@ -127,7 +127,7 @@ class LinkedList {
     */
     const newNode = new ListNode(data);
 
-    if(this.length === 0) {
+    if (this.length === 0) {
       this.head = newNode;
       this.tail = newNode;
     } else {
@@ -150,7 +150,7 @@ class LinkedList {
         зменшуємо довжину
 			повертаємо видалений елемент
     */
-    if(this.length === 0) {
+    if (this.length === 0) {
       return undefined;
     }
 
@@ -163,13 +163,67 @@ class LinkedList {
 
     return firstNode;
   }
+
+  [Symbol.iterator]() {
+    return new LinkedListIterator(this);
+  }
+}
+
+class LinkedListIterator {
+  constructor(list) {
+    this.list = list;
+    this.currentNode = null;
+  }
+
+  next() {
+
+    // if (this.currentNode) {
+    //   this.currentNode = this.currentNode.next;
+    // } else {
+    //   this.currentNode = this.list.head;
+    // }
+
+    this.currentNode = this.currentNode ? this.currentNode.next : this.list.head;
+
+    return {
+      done: !this.currentNode,
+      value: this.currentNode,
+    };
+  }
 }
 
 const list1 = new LinkedList();
 
+//
+// list1[Symbol.iterator] = function () {
+//   // this = list1
+
+//   let currentNode = null;
+
+//   return {
+//     next: function () {
+//       // debugger;
+//       if(currentNode) {
+//         currentNode = currentNode.next;
+//       } else {
+//         currentNode = list1.head;
+//       }
+
+//       return {
+//         done: !currentNode,
+//         value: currentNode
+//       }
+//     }
+//   }
+// }
+
 list1.push('first');
-// list1.push('second');
-// list1.push('last');
+list1.push('second');
+list1.push('last');
+
+for (const node of list1) {
+  console.log(node.data);
+}
 
 // Symbol - унікальний незмінний тип даних. Використовується в об'єктах, не можна створювати через new
 
@@ -178,12 +232,12 @@ const sym2 = Symbol('cat');
 
 // const objSymb = new Symbol(); // ERROR
 
-console.log(sym1 === sym2); // false
-console.log(sym1 === sym1); // true
+// console.log(sym1 === sym2); // false
+// console.log(sym1 === sym1); // true
 
 const obj = {
   test: 'property 1',
-  text: 'secret'
+  text: 'secret',
 };
 
 const symbolKey = Symbol('key in object');
@@ -195,16 +249,14 @@ obj[symbolKey] = 'prop 2';
 
 const obj2 = {
   [symbolKey]: 'prop2',
-  [Symbol('find me if you can')]: 'secret'
-}
+  [Symbol('find me if you can')]: 'secret',
+};
 
-
-console.log(obj[symbolKey]);
+// console.log(obj[symbolKey]);
 
 // Object.getOwnPropertySymbols приймає об'єкт з символами
 // повератє масив елементами якого є ці символи
 const symbolsInObj2 = Object.getOwnPropertySymbols(obj2);
-
 
 // iterator
 
@@ -218,7 +270,7 @@ const symbolsInObj2 = Object.getOwnPropertySymbols(obj2);
     arguments
     ...
 */
-const arr = [50,5,false];
+const arr = [50, 5, false];
 
 // отримаємо екземпляр ітреатора масиву
 // це об'єкт з методом next який повертає об'єкт
@@ -234,42 +286,42 @@ const iter2 = arr[Symbol.iterator]();
 */
 
 // спред оператор
-console.log(...arr);
+// console.log(...arr);
 
 const notArr = {
   0: 'first',
   1: 'second',
   2: 'third',
   lenght: 3,
-  [Symbol()]: 'secret'
-}
+  [Symbol()]: 'secret',
+};
 
 // console.log(...notArr); // ERROR
 
 // цикли
 
 // for ... in - дозволяє ходити по властивостям об'єктів повертає їх ключі
-for(const key in notArr) {
-  console.log(key); // ключі об'єкта
-  console.log(notArr[key]);
+for (const key in notArr) {
+  // console.log(key); // ключі об'єкта
+  // console.log(notArr[key]);
 }
-console.log('===ARR===')
-for(const key in arr) {
-  console.log(key); // ключі об'єкта
-  console.log(arr[key]);
+// console.log('===ARR===');
+for (const key in arr) {
+  // console.log(key); // ключі об'єкта
+  // console.log(arr[key]);
 }
-console.log('====for ... of====')
+// console.log('====for ... of====');
 // for ... of - цикл на ітераторах
-for(const elem of arr) {
-  console.log(elem);
-  if(elem === 50) {
+for (const elem of arr) {
+  // console.log(elem);
+  if (elem === 50) {
     break;
   }
 }
 
-for(let i = 0; i < arr.length;i++) {
-  console.log(arr[i]);
-  if(arr[i] === 50) {
+for (let i = 0; i < arr.length; i++) {
+  // console.log(arr[i]);
+  if (arr[i] === 50) {
     break;
   }
 }
@@ -278,4 +330,3 @@ for(let i = 0; i < arr.length;i++) {
 // for(const elem of notArr) {
 //   console.log(elem);
 // }
-
