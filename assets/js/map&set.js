@@ -99,12 +99,12 @@ const translate2 = (str, vocab = vocabulary) =>
 
 const testStr = 'test string';
 
-function createLettersMap (str, ignoredLetters = [' ', ',', '!', '?', '.']) {
+function createLettersMap(str, ignoredLetters = [' ', ',', '!', '?', '.']) {
   const lettersMap = new Map();
 
-  for(const letter of str) {
-    if(!ignoredLetters.includes(letter)) {
-      if(lettersMap.has(letter)) {
+  for (const letter of str) {
+    if (!ignoredLetters.includes(letter)) {
+      if (lettersMap.has(letter)) {
         lettersMap.set(letter, lettersMap.get(letter) + 1);
       } else {
         lettersMap.set(letter, 1);
@@ -141,9 +141,16 @@ set.delete(null);
 set.clear();
 
 // створення непустого сету
-const categories = new Set(['food', 'phones', 'tablets', 'notebooks', 'books', 'food']);
+const categories = new Set([
+  'food',
+  'phones',
+  'tablets',
+  'notebooks',
+  'books',
+  'food',
+]);
 
-const uniqueCategories =  [...categories];
+const uniqueCategories = [...categories];
 
 /*
   створити 2 масиви з іменами, але в обох масивах хоча б одне ім'я має повторюватися
@@ -157,3 +164,59 @@ const namesSet = new Set([...names1, ...names2]);
 const uniqueNames = [...namesSet];
 
 const uniqueNames2 = [...new Set([...names1, ...names2])];
+
+// for (const name of namesSet) {
+//   if(name === 'Alex') {
+//     alert('Alex in set')
+//   }
+// }
+
+namesSet.forEach((elem, index, set) => {
+  // console.log(`elem is ${elem}`);
+  // console.log(`index is ${index}`); // === elem
+  // console.log(`set is ${set}`);
+});
+
+// дає ітератор,якій містить всі ключи мапи
+// map1.keys()
+for (const key of map1.keys()) {
+  // console.log(key);
+}
+
+// дає ітератор,якій містить всі значення мапи
+// map1.values()
+for (const value of map1.values()) {
+  // console.log(value);
+}
+
+// map1.entries() -
+for (const entry of map1.entries()) {
+  // console.log(entry); // приклад tuple (кортеж) - масив з чітко визначиним роіміром 
+  // // і чітко визначиним роіменням даних у них
+  // const key = entry[0];
+  // const value = entry[1];
+}
+
+// map1 === map1.entries()
+for (const entry of map1) {
+  console.log(entry);
+}
+
+// заповнена мапа
+
+const notEmptyMap = new Map([
+  ['key1', 'value1'], // кортежи пар ключ - значення
+  ['key2', 'value2'],
+  ['key3', 'value3'],
+]);
+
+const map2 = new Map([...notEmptyMap, ['my 1', true]]);
+
+// у сетів ключі замінюються значеннями
+for (const key of namesSet.keys()) {
+  console.log(key);
+}
+
+for(const entry of namesSet.entries()) {
+  console.log(entry);
+}
