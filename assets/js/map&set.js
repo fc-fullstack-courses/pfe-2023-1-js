@@ -31,9 +31,9 @@ map1.delete(arr);
 
 // forEach як масив
 map1.forEach(function (value, key, map) {
-  console.log(value);
-  console.log(key);
-  console.log(map);
+  // console.log(value);
+  // console.log(key);
+  // console.log(map);
 });
 
 /*
@@ -114,3 +114,33 @@ function createLettersMap (str, ignoredLetters = [' ', ',', '!', '?', '.']) {
 
   return lettersMap;
 }
+
+// Set - множина
+// колекція, яка тримає в середені себе унікальні дані
+
+const set = new Set();
+
+// додавання
+set.add(1);
+
+set.add('asdsadsa');
+set.add(null);
+set.add(1);
+
+set.add({});
+set.add({});
+
+// перевірка наявності
+const hasSet1 = set.has(1); // true
+const hasSet0 = set.has(0); // false
+
+// видалення одного значення
+set.delete(null);
+
+// видалити всі значення
+set.clear();
+
+// створення непустого сету
+const categories = new Set(['food', 'phones', 'tablets', 'notebooks', 'books', 'food']);
+
+const uniqueCategories =  [...categories];
