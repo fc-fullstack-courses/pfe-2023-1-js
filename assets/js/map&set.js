@@ -220,3 +220,20 @@ for (const key of namesSet.keys()) {
 for(const entry of namesSet.entries()) {
   console.log(entry);
 }
+
+/*
+  Object.keys(obj)
+  Object.values(obj)
+  Object.entries(obj)
+  повертати будуть масиви з ключами, значеннями або записами (у виді кортежів)
+*/
+
+const testObj = {
+  key1: 'value1',
+  key2: 'value2',
+  key3: 'value3',
+}
+
+const keysArr = Object.keys(testObj);
+const valuesArr = Object.values(testObj);
+const entriesArr = Object.entries(testObj);
