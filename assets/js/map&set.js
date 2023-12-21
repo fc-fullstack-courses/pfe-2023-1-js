@@ -91,8 +91,26 @@ const translate2 = (str, vocab = vocabulary) =>
   ви маєте рядок з текстом
   створити мапу яка буде містити дані про те скільки у рядку яких символів
 
-  'test string' t - 3 рази, 
+  'Test string' t - 2 рази, T - 1
 
   * ви маєте ігнорувати символи які не є буквами (коми, пробіли ...)
 
 */
+
+const testStr = 'test string';
+
+function createLettersMap (str, ignoredLetters = [' ', ',', '!', '?', '.']) {
+  const lettersMap = new Map();
+
+  for(const letter of str) {
+    if(!ignoredLetters.includes(letter)) {
+      if(lettersMap.has(letter)) {
+        lettersMap.set(letter, lettersMap.get(letter) + 1);
+      } else {
+        lettersMap.set(letter, 1);
+      }
+    }
+  }
+
+  return lettersMap;
+}
