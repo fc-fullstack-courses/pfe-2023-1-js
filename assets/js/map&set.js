@@ -144,3 +144,16 @@ set.clear();
 const categories = new Set(['food', 'phones', 'tablets', 'notebooks', 'books', 'food']);
 
 const uniqueCategories =  [...categories];
+
+/*
+  створити 2 масиви з іменами, але в обох масивах хоча б одне ім'я має повторюватися
+  за допомогою сету отримати масив з усіма унікальними іменами
+*/
+
+const names1 = ['John', 'Jane', 'Taras', 'Test', 'name'];
+const names2 = ['Alex', 'Petro', 'Pavlo', 'Test', 'John', 'Null'];
+
+const namesSet = new Set([...names1, ...names2]);
+const uniqueNames = [...namesSet];
+
+const uniqueNames2 = [...new Set([...names1, ...names2])];
