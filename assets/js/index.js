@@ -92,7 +92,7 @@ function mergeSort(arr = []) {
   // базовий випадок
   if (arr.length <= 1) return arr;
 
-  let middleIndex = Math.floor (arr.length / 2);
+  let middleIndex = Math.floor(arr.length / 2);
 
   // розбиваємо масив на 2 підмасиви приблизно навпіл
   const leftArr = arr.slice(0, middleIndex);
@@ -104,3 +104,75 @@ function mergeSort(arr = []) {
 
   return merge(leftSortedArr, rightSortedArr);
 }
+
+// for (const key of Object.entries(obj)) {
+// }
+
+// const map1 = new Map([
+//   ['key1', { test: true }],
+//   ['key2', 'testwdsasdsafd'],
+//   ['key3', { ajdnsja: null }],
+// ]);
+
+// map1
+
+// const obj232 = {
+//   test: null
+// }
+
+const btn = document.querySelector('#btn');
+
+// btn.addEventListener('click', (e) => {
+//   console.log('clicked');
+// });
+
+// const clickEvent = new MouseEvent('click');
+// btn.dispatchEvent(clickEvent);
+
+const form = document.getElementById('form');
+const section = document.getElementById('section');
+
+function targetDifferenceHandler (e) {
+  console.log('------------------------------');
+  console.log('target is:');
+  console.log(e.target);
+  console.log('==============================');
+  console.log('currentTarget is:');
+  console.log(e.currentTarget);
+  console.log('------------------------------');
+}
+
+btn.addEventListener('click', targetDifferenceHandler);
+form.addEventListener('click', targetDifferenceHandler);
+section.addEventListener('click', targetDifferenceHandler);
+
+// btn.addEventListener('click', targetDifferenceHandler);
+btn.addEventListener('click', (e) => {
+  e.stopPropagation();
+});
+
+btn.addEventListener('click', (e) => {
+  // e.stopImmediatePropagation();
+});
+
+btn.addEventListener('click', (e) => {
+  console.log('other btn method');
+});
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+});
+
+btn.setAttribute('title', 'title set with setAttribute');
+
+const title = btn.getAttribute('title');
+
+const attrNode = document.createAttribute('style');
+attrNode.value = 'border-radius: 5px; padding: 15px 20px; border: 1px solid black;';
+
+btn.setAttributeNode(attrNode);
+
+const titleNode = btn.getAttributeNode('title');
+
+btn.setAttribute('data-color', 'red');
+btn.setAttribute('data-background-color', 'red');
